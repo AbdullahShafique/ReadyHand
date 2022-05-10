@@ -4,13 +4,13 @@ import {
   View,
   Dimensions,
   TextInput,
-  Image,
   Pressable,
+  Image,
 } from 'react-native';
 import React from 'react';
 import colors from '../../globalStyles/colors';
 
-const MainInputField = ({
+const UploadButton = ({
   title,
   placeholder,
   value,
@@ -18,9 +18,9 @@ const MainInputField = ({
   ShowPassword,
   autoCapitalize,
   onBlur,
-  eye,
-  onEyePress,
   keyboardType,
+  icon,
+  iconSize,
 }) => {
   return (
     <View style={styles.container}>
@@ -38,30 +38,25 @@ const MainInputField = ({
           style={{width: '90%'}}
           keyboardType={keyboardType}
         />
-        {/*eye  */}
-        {eye ? (
-          <Pressable onPress={onEyePress}>
-            <Image
-              source={
-                ShowPassword
-                  ? require('../../../assets/icons/show_eye.png')
-                  : require('../../../assets/icons/hide_eye.png')
-              }
-              resizeMode={'contain'}
-              style={{
-                width: 15,
-                height: 18,
-                tintColor: colors.Green,
-              }}
-            />
-          </Pressable>
-        ) : null}
+        {/*Icon */}
+
+        <Pressable>
+          <Image
+            source={icon}
+            resizeMode={'contain'}
+            style={{
+              width: iconSize,
+              height: iconSize,
+              //  backgroundColor: 100,
+            }}
+          />
+        </Pressable>
       </View>
     </View>
   );
 };
 
-export default MainInputField;
+export default UploadButton;
 
 const styles = StyleSheet.create({
   container: {marginTop: '5%'},
@@ -77,7 +72,7 @@ const styles = StyleSheet.create({
     color: colors.Black,
     fontSize: 16,
     backgroundColor: colors.Grey,
-    width: '85%',
+    width: '55%',
     height: Dimensions.get('window').height / 15,
     borderRadius: 16,
     paddingHorizontal: 20,

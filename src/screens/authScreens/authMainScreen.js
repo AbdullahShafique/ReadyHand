@@ -29,12 +29,8 @@ const AuthMainScreen = ({navigation}) => {
       <View style={{flexDirection: 'row', alignSelf: 'center'}}>
         <Text style={styles.text4}>Already have an account? </Text>
 
-        <Pressable on>
-          <Text
-            style={styles.text5}
-            onPress={() => navigation.navigate('Login')}>
-            Sign In
-          </Text>
+        <Pressable onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.text5}>Sign In</Text>
         </Pressable>
       </View>
     </View>

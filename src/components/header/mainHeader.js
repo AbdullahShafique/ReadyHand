@@ -43,11 +43,11 @@ const MainHeader = ({text, onPress}) => {
       />
       <View
         style={{
-          height: ScreenHeight / 20,
+          height: ScreenHeight / 15,
           width: '100%',
           backgroundColor: 'white',
           position: 'absolute',
-          bottom: -30,
+          bottom: -35,
           borderTopLeftRadius: 16,
           borderTopRightRadius: 16,
         }}></View>

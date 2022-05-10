@@ -1,16 +1,16 @@
 import {
-  StyleSheet,
-  Text,
   View,
+  Text,
+  StyleSheet,
   Dimensions,
   TextInput,
-  Image,
   Pressable,
+  Image,
 } from 'react-native';
 import React from 'react';
 import colors from '../../globalStyles/colors';
 
-const MainInputField = ({
+const InputFieldWithIcon = ({
   title,
   placeholder,
   value,
@@ -18,9 +18,9 @@ const MainInputField = ({
   ShowPassword,
   autoCapitalize,
   onBlur,
-  eye,
-  onEyePress,
   keyboardType,
+  icon,
+  iconSize,
 }) => {
   return (
     <View style={styles.container}>
@@ -38,31 +38,25 @@ const MainInputField = ({
           style={{width: '90%'}}
           keyboardType={keyboardType}
         />
-        {/*eye  */}
-        {eye ? (
-          <Pressable onPress={onEyePress}>
-            <Image
-              source={
-                ShowPassword
-                  ? require('../../../assets/icons/show_eye.png')
-                  : require('../../../assets/icons/hide_eye.png')
-              }
-              resizeMode={'contain'}
-              style={{
-                width: 15,
-                height: 18,
-                tintColor: colors.Green,
-              }}
-            />
-          </Pressable>
-        ) : null}
+        {/*Icon */}
+
+        <Pressable>
+          <Image
+            source={icon}
+            resizeMode={'contain'}
+            style={{
+              width: iconSize,
+              height: iconSize,
+              //  backgroundColor: 100,
+            }}
+          />
+        </Pressable>
       </View>
     </View>
   );
 };
 
-export default MainInputField;
-
+export default InputFieldWithIcon;
 const styles = StyleSheet.create({
   container: {marginTop: '5%'},
   title: {
