@@ -9,9 +9,14 @@ import {
 import React from 'react';
 import colors from '../../globalStyles/colors';
 
-const ServiceCard = ({title, icon, onPress}) => {
+const ServiceCard = ({title, icon, onPress, isSelected}) => {
   return (
-    <Pressable style={styles.card} onPress={onPress}>
+    <Pressable
+      style={{
+        ...styles.card,
+        borderWidth: isSelected ? 2 : 0,
+      }}
+      onPress={onPress}>
       {/* Image */}
       <Image
         source={icon}
@@ -40,22 +45,23 @@ export default ServiceCard;
 
 const styles = StyleSheet.create({
   card: {
-    height: Dimensions.get('window').width / 2.2222,
-    width: Dimensions.get('window').width / 2.2222,
+    height: Dimensions.get('window').width / 2.5,
+    width: Dimensions.get('window').width / 2.5,
     borderRadius: 16,
-    margin: '2%',
+    margin: '3%',
     borderWidth: 0,
     backgroundColor: 'white',
     shadowColor: '#000',
     shadowOffset: {
-      width: 0,
-      height: 2,
+      width: 4,
+      height: 4,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
     alignItems: 'center',
     justifyContent: 'space-evenly',
+    borderColor: colors.Green,
   },
   text: {
     fontFamily: 'OpenSans-Regular',

@@ -1,54 +1,82 @@
 import {StyleSheet, Text, View, FlatList} from 'react-native';
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import colors from '../../globalStyles/colors';
 import MainHeader from '../../components/header/mainHeader';
 import ServiceCard from '../../components/cards/serviceCard';
 import {AuthContext} from '../../Authentication/authProvider';
+import MainButton from '../../components/buttons/mainButton';
 
 const ChooseServices = ({navigation}) => {
-  const {userType} = useContext(AuthContext);
-  const services = [
+  const {userType, setOnBoardingDone} = useContext(AuthContext);
+
+  const [services, setServices] = useState([
     {
       key: 1,
       title: 'Cleaning',
       icon: require('../../../assets/icons/Cleaning.png'),
+      isSelected: false,
     },
     {
       key: 2,
       title: 'Babysitting',
       icon: require('../../../assets/icons/Babysitting.png'),
+      isSelected: false,
     },
     {
       key: 3,
       title: 'Errand',
       icon: require('../../../assets/icons/Errand.png'),
+      isSelected: false,
     },
     {
       key: 4,
       title: 'Shopping',
       icon: require('../../../assets/icons/Shopping.png'),
+      isSelected: false,
     },
     {
       key: 5,
       title: 'Nursing',
       icon: require('../../../assets/icons/Nursing.png'),
+      isSelected: false,
     },
     {
       key: 6,
       title: 'Companionship',
       icon: require('../../../assets/icons/Companionship.png'),
+      isSelected: false,
     },
     {
       key: 7,
       title: 'Nanny',
       icon: require('../../../assets/icons/Nanny.png'),
+      isSelected: false,
     },
     {
       key: 8,
       title: 'Gardening',
       icon: require('../../../assets/icons/Gardening.png'),
+      isSelected: false,
     },
-  ];
+  ]);
+
+  // This Function is for selecting services
+
+  const handleSelection = key => {
+    const temp = [];
+    services.forEach((item, index) => {
+      if (item.key == key)
+        temp.push({
+          icon: item.icon,
+          isSelected: !item.isSelected,
+          key: item.key,
+          title: item.title,
+        });
+      else temp.push(item);
+    });
+    setServices(temp);
+  };
+
   return (
     <View style={styles.container}>
       {/* Hearder */}
@@ -82,12 +110,20 @@ const ChooseServices = ({navigation}) => {
             <ServiceCard
               title={item.title}
               icon={item.icon}
+              isSelected={item.isSelected}
               onPress={() => {
-                navigation.navigate('ProfileVerification');
-                console.log(item.title);
+                handleSelection(item.key);
               }}
             />
           )}
+          ListFooterComponent={
+            <View style={{marginVertical: '5%'}}>
+              <MainButton
+                text={'Next'}
+                onPress={() => setOnBoardingDone(true)}
+              />
+            </View>
+          }
         />
       </View>
     </View>

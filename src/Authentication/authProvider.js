@@ -5,6 +5,7 @@ export const AuthContext = createContext();
 export const AuthProvider = ({children}) => {
   const [user, setUser] = useState(false);
   const [userType, setUserType] = useState(null);
+  const [onBoardingDone, setOnBoardingDone] = useState(false);
 
   return (
     <AuthContext.Provider
@@ -13,6 +14,9 @@ export const AuthProvider = ({children}) => {
         setUser,
         userType,
         setUserType,
+        onBoardingDone,
+        setOnBoardingDone,
+
         login: () => {
           setUser(true);
         },

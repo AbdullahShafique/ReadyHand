@@ -21,10 +21,12 @@ const InputFieldWithIcon = ({
   keyboardType,
   icon,
   iconSize,
+  onSubmitEditing,
+  onPress,
 }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      {title ? <Text style={styles.title}>{title}</Text> : null}
       <View style={styles.inputField}>
         <TextInput
           placeholder={placeholder}
@@ -37,10 +39,11 @@ const InputFieldWithIcon = ({
           underlineColorAndroid="transparent"
           style={{width: '90%'}}
           keyboardType={keyboardType}
+          onSubmitEditing={onSubmitEditing}
         />
         {/*Icon */}
 
-        <Pressable>
+        <Pressable onPress={onPress}>
           <Image
             source={icon}
             resizeMode={'contain'}

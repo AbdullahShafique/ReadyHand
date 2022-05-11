@@ -10,47 +10,24 @@ import {
 import React from 'react';
 import colors from '../../globalStyles/colors';
 
-const UploadButton = ({
-  title,
-  placeholder,
-  value,
-  onChangeText,
-  ShowPassword,
-  autoCapitalize,
-  onBlur,
-  keyboardType,
-  icon,
-  iconSize,
-}) => {
+const UploadButton = ({title}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <View style={styles.inputField}>
-        <TextInput
-          placeholder={placeholder}
-          placeholderTextColor={colors.DarkGrey}
-          value={value}
-          onChangeText={onChangeText}
-          secureTextEntry={!ShowPassword}
-          autoCapitalize={autoCapitalize}
-          onBlur={onBlur}
-          underlineColorAndroid="transparent"
-          style={{width: '90%'}}
-          keyboardType={keyboardType}
+      <View style={styles.button}>
+        {/* Upload Icon */}
+        <Image
+          source={require('../../../assets/icons/upload.png')}
+          resizeMode={'contain'}
+          style={{
+            // backgroundColor: 100,
+            width: '12%',
+            height: '80%',
+            position: 'absolute',
+            left: '15%',
+          }}
         />
-        {/*Icon */}
-
-        <Pressable>
-          <Image
-            source={icon}
-            resizeMode={'contain'}
-            style={{
-              width: iconSize,
-              height: iconSize,
-              //  backgroundColor: 100,
-            }}
-          />
-        </Pressable>
+        <Text style={styles.text}>Upload</Text>
       </View>
     </View>
   );
@@ -64,13 +41,10 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans-Bold',
     color: colors.DarkGrey,
     fontSize: 16,
-    marginLeft: '5%',
+    marginLeft: '7%',
     marginBottom: '2%',
   },
-  inputField: {
-    fontFamily: 'OpenSans-Regular',
-    color: colors.Black,
-    fontSize: 16,
+  button: {
     backgroundColor: colors.Grey,
     width: '55%',
     height: Dimensions.get('window').height / 15,
@@ -79,6 +53,11 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+  },
+  text: {
+    fontFamily: 'OpenSans-Regular',
+    color: colors.DarkGrey,
+    fontSize: 16,
   },
 });

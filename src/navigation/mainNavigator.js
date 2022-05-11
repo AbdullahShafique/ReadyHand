@@ -1,10 +1,12 @@
 import {View, Text} from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import OnBoardingNavigator from './onBoardingNavigator';
 import BottomTabNavigator from './bottomTabNavigator';
+import {AuthContext} from '../Authentication/authProvider';
 
 const MainNavigator = () => {
-  return 1 ? <OnBoardingNavigator /> : <BottomTabNavigator />;
+  const {onBoardingDone} = useContext(AuthContext);
+  return onBoardingDone ? <BottomTabNavigator /> : <OnBoardingNavigator />;
 };
 
 export default MainNavigator;
