@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     color: colors.Black,
     fontSize: 16,
     backgroundColor: colors.Grey,
-    width: '85%',
+    width: '90%',
     height: Dimensions.get('window').height / 15,
     borderRadius: 16,
     paddingHorizontal: 20,

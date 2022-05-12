@@ -2,7 +2,7 @@ import {StyleSheet, Text, View, Image, Pressable} from 'react-native';
 import React from 'react';
 import colors from '../../globalStyles/colors';
 
-const WhiteHeader = ({onPress}) => {
+const WhiteHeader = ({onPress, text}) => {
   return (
     <Pressable style={styles.container} onPress={onPress}>
       <Image
@@ -16,7 +16,7 @@ const WhiteHeader = ({onPress}) => {
         }}
       />
 
-      <Text style={styles.text}>Clearing</Text>
+      <Text style={styles.text}>{text}</Text>
     </Pressable>
   );
 };

@@ -15,7 +15,7 @@ const Home = ({navigation}) => {
         placeholder={'Search by name or location'}
         icon={require('../../../assets/icons/filter.png')}
         iconSize={18}
-        onSubmitEditing={() => navigation.navigate('SelectServices')}
+        onSubmitEditing={() => navigation.navigate('Search')}
         onPress={() => navigation.navigate('Filters')}
       />
       {/* Explore */}
@@ -23,9 +23,14 @@ const Home = ({navigation}) => {
       {/* Services  */}
       <FlatList
         data={[1, 2, 3, 4]}
-        renderItem={({item}) => <ServiceDetail />}
+        renderItem={({item}) => (
+          <ServiceDetail
+            onPress={() => navigation.navigate('SelectServices')}
+          />
+        )}
         // <ServiceDetail />
         keyExtractor={item => item}
+        //horizontal={true}
       />
       {/* <ServiceDetail /> */}
     </View>

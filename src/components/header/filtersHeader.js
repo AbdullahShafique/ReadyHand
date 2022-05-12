@@ -1,12 +1,19 @@
-import {StyleSheet, Text, View, Pressable, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  Image,
+  Dimensions,
+} from 'react-native';
 import React from 'react';
 import colors from '../../globalStyles/colors';
 
-const FiltersHeader = () => {
+const FiltersHeader = ({onPress}) => {
   return (
     <View style={styles.container}>
       <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
-        <Pressable style={{}}>
+        <Pressable onPress={onPress} style={{}}>
           <Image
             source={require('../../../assets/icons/cross.png')}
             resizeMode={'contain'}
@@ -22,7 +29,7 @@ const FiltersHeader = () => {
         <Text style={styles.text}>Clearing</Text>
       </View>
 
-      <Text>Clear</Text>
+      <Text style={styles.text2}>Clear</Text>
     </View>
   );
 };
@@ -33,7 +40,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: 'white',
-    height: '6%',
+    height: Dimensions.get('screen').height / 20,
     alignItems: 'center',
     borderBottomWidth: 1,
     width: '90%',
@@ -47,5 +54,10 @@ const styles = StyleSheet.create({
     color: colors.Black,
     fontSize: 24,
     marginLeft: '10%',
+  },
+  text2: {
+    fontFamily: 'OpenSans-Regular',
+    color: colors.Black,
+    fontSize: 16,
   },
 });
