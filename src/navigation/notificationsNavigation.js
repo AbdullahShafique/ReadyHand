@@ -1,11 +1,17 @@
 import {View, Text} from 'react-native';
 import React from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Notifications from '../screens/notificationScreens/notifications';
+
+const Stack = createNativeStackNavigator();
 
 const NotificationsNavigation = () => {
   return (
-    <View>
-      <Text>NotificationsNavigation</Text>
-    </View>
+    <Stack.Navigator
+      screenOptions={{headerShown: false}}
+      initialRouteName={'Notifications'}>
+      <Stack.Screen name="Notifications" component={Notifications} />
+    </Stack.Navigator>
   );
 };
 

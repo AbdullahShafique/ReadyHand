@@ -6,6 +6,7 @@ import SelectServices from '../screens/homeScreens/selectServices';
 import Filters from '../screens/homeScreens/filters';
 import Search from '../screens/homeScreens/search';
 import ChoosePayment from '../screens/homeScreens/choosePayment';
+import TrackOrder from '../screens/homeScreens/trackOrder';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ const HomeNavigator = () => {
       <Stack.Screen name="Filters" component={Filters} />
       <Stack.Screen name="Search" component={Search} />
       <Stack.Screen name="ChoosePayment" component={ChoosePayment} />
+      <Stack.Screen name="TrackOrder" component={TrackOrder} />
     </Stack.Navigator>
   );
 };

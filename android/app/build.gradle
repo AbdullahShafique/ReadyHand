@@ -135,7 +135,7 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.new_test"
+        applicationId "com.readyhand"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -224,6 +224,13 @@ android {
         }
     }
     signingConfigs {
+        release {
+           
+                storeFile file('readyhand.keystore')
+                storePassword 'readyhand'
+                keyAlias 'readyhand'
+                keyPassword 'readyhand'
+            
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'
@@ -241,6 +248,8 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
+
         }
     }
 

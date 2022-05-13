@@ -126,7 +126,7 @@ const SelectServices = ({navigation}) => {
           <View style={{marginBottom: '10%'}}>
             <SmallButton
               text={'Continue'}
-              width={'50%'}
+              width={'70%'}
               height={Dimensions.get('window').height / 15}
               onPress={() => navigation.navigate('ChoosePayment')}
             />

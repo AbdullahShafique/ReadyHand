@@ -2,18 +2,18 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
   Dimensions,
   Pressable,
+  Image,
 } from 'react-native';
 import React from 'react';
 import colors from '../../globalStyles/colors';
 
-const ServiceDetail = ({onPress}) => {
+const ServiceDetailHorizontal = ({onPress}) => {
   return (
     <Pressable style={styles.card} onPress={onPress}>
       <Image
-        source={require('../../../assets/images/p4.png')}
+        source={require('../../../assets/images/p2.png')}
         resizeMode={'contain'}
         style={{
           width: '35%',
@@ -66,12 +66,13 @@ const ServiceDetail = ({onPress}) => {
   );
 };
 
-export default ServiceDetail;
+export default ServiceDetailHorizontal;
 
 const styles = StyleSheet.create({
   card: {
-    width: '90%',
+    width: Dimensions.get('window').width / 1.2,
     height: Dimensions.get('window').height / 5.2,
+    marginRight: 10,
     borderRadius: 17,
     backgroundColor: 'white',
     shadowColor: '#000',
@@ -82,12 +83,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    marginLeft: '5%',
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
     paddingHorizontal: '5%',
-    marginBottom: '5%',
+    marginTop: '5%',
   },
   text1: {
     fontFamily: 'OpenSans-Bold',

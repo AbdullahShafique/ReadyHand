@@ -10,7 +10,7 @@ const WhiteButton = ({text, Icon, text2}) => {
         <Image
           source={Icon}
           resizeMode={'contain'}
-          style={{width: '4%', height: '30%'}}
+          style={{width: '5%', height: '30%'}}
         />
       ) : null}
       {text2 ? <Text style={styles.text2}>{text2}</Text> : null}

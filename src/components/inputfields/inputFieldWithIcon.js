@@ -61,7 +61,7 @@ const InputFieldWithIcon = ({
 
 export default InputFieldWithIcon;
 const styles = StyleSheet.create({
-  container: {marginTop: '5%'},
+  container: {marginTop: '5%', marginBottom: '5%'},
   title: {
     fontFamily: 'OpenSans-Bold',
     color: colors.DarkGrey,
