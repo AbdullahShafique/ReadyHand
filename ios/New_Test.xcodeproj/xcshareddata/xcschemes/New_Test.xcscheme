@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "New_Test.app"
-               BlueprintName = "New_Test"
-               ReferencedContainer = "container:New_Test.xcodeproj">
+               BuildableName = "readyhand.app"
+               BlueprintName = "readyhand"
+               ReferencedContainer = "container:readyhand.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "New_TestTests.xctest"
-               BlueprintName = "New_TestTests"
-               ReferencedContainer = "container:New_Test.xcodeproj">
+               BuildableName = "readyhandTests.xctest"
+               BlueprintName = "readyhandTests"
+               ReferencedContainer = "container:readyhand.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "New_Test.app"
-            BlueprintName = "New_Test"
-            ReferencedContainer = "container:New_Test.xcodeproj">
+            BuildableName = "readyhand.app"
+            BlueprintName = "readyhand"
+            ReferencedContainer = "container:readyhand.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "New_Test.app"
-            BlueprintName = "New_Test"
-            ReferencedContainer = "container:New_Test.xcodeproj">
+            BuildableName = "readyhand.app"
+            BlueprintName = "readyhand"
+            ReferencedContainer = "container:readyhand.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

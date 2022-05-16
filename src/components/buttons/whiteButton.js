@@ -2,7 +2,7 @@ import {StyleSheet, Text, View, Dimensions, Image} from 'react-native';
 import React from 'react';
 import colors from '../../globalStyles/colors';
 
-const WhiteButton = ({text, Icon, text2}) => {
+const WhiteButton = ({text, Icon, text2, BigIcon, messages, text4}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{text}</Text>
@@ -10,10 +10,19 @@ const WhiteButton = ({text, Icon, text2}) => {
         <Image
           source={Icon}
           resizeMode={'contain'}
-          style={{width: '5%', height: '30%'}}
+          style={{
+            width: BigIcon ? '8%' : '5%',
+            height: BigIcon ? '50%' : '30%',
+          }}
         />
       ) : null}
       {text2 ? <Text style={styles.text2}>{text2}</Text> : null}
+      {text4 ? <Text style={styles.text4}>{text4}</Text> : null}
+      {messages ? (
+        <View style={styles.messagesButton}>
+          <Text style={styles.text3}>{messages}</Text>
+        </View>
+      ) : null}
     </View>
   );
 };
@@ -26,7 +35,7 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height / 14,
     borderRadius: 10,
     alignSelf: 'center',
-    marginTop: '5%',
+    //marginTop: '5%',
     backgroundColor: 'white',
     shadowColor: '#000',
     shadowOffset: {
@@ -50,5 +59,23 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans-Bold',
     color: colors.Black,
     fontSize: 16,
+  },
+  text3: {
+    fontFamily: 'OpenSans-Bold',
+    color: 'white',
+    fontSize: 16,
+  },
+  text4: {
+    fontFamily: 'OpenSans-Bold',
+    color: colors.Green,
+    fontSize: 16,
+  },
+  messagesButton: {
+    backgroundColor: colors.Green,
+    height: 33,
+    width: 33,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 33 / 2,
   },
 });

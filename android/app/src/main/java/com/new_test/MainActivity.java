@@ -1,4 +1,4 @@
-package com.new_test;
+package com.readyhand;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -19,7 +19,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
   @Override
   protected String getMainComponentName() {
-    return "New_Test";
+    return "readyhand";
   }
 
   /**

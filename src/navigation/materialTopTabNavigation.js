@@ -22,7 +22,7 @@ const MaterialTopTabNavigation = () => {
     <Tab.Navigator
       screenOptions={{
         tabBarItemStyle: {
-          width: wp(33),
+          // width: wp(33),
           backgroundColor: 'white',
         },
 
@@ -32,8 +32,6 @@ const MaterialTopTabNavigation = () => {
       // activeColor="#f0edf6"
 
       // tabBarOptions={{
-      //   activeBackgroundColor: 'red',
-      //   inactiveBackgroundColor: 'red',
       //   style: {
       //     elevation: 0,
       //     right: wp(5),

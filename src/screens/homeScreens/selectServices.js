@@ -5,16 +5,18 @@ import {
   ImageBackground,
   Dimensions,
   Image,
-  ScrollView,
+  Pressable,
   FlatList,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import WhiteHeader from '../../components/header/whiteHeader';
 import colors from '../../globalStyles/colors';
 import WhiteButton from '../../components/buttons/whiteButton';
 import SmallButton from '../../components/buttons/smallButton';
 import ReviewCard from '../../components/cards/reviewCard';
+import ProfileModal from '../../components/modals/profileModal';
 const SelectServices = ({navigation}) => {
+  const [profileModalVisible, setProfileModalVisible] = useState(false);
   return (
     <View style={styles.container}>
       <WhiteHeader onPress={() => navigation.goBack()} />
@@ -79,41 +81,44 @@ const SelectServices = ({navigation}) => {
             {/* Hourly Rate */}
             <WhiteButton text={'Hourly Rate'} text2={'£ 8.0/Hr'} />
             {/* Profile */}
-            <View
-              style={{
-                width: '90%',
-                height: Dimensions.get('window').height / 8,
-                alignSelf: 'center',
-                alignItems: 'center',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
-              {/*Profile Image  */}
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <ImageBackground
-                  source={require('../../../assets/images/p5.png')}
-                  resizeMode={'contain'}
-                  style={{
-                    width: Dimensions.get('window').height / 14,
-                    height: Dimensions.get('window').height / 14,
-                  }}
-                  imageStyle={{
-                    borderRadius: 120 / 2,
-                    backgroundColor: 100,
-                  }}>
-                  <View style={styles.online}></View>
-                </ImageBackground>
-                {/* Name */}
-                <Text style={styles.text5}>Zeeshan Ali</Text>
-              </View>
+            <Pressable onPress={() => setProfileModalVisible(true)}>
+              <View
+                style={{
+                  width: '90%',
+                  height: Dimensions.get('window').height / 8,
+                  alignSelf: 'center',
+                  alignItems: 'center',
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                }}>
+                {/*Profile Image  */}
+                <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                  <ImageBackground
+                    source={require('../../../assets/images/p5.png')}
+                    resizeMode={'contain'}
+                    style={{
+                      width: Dimensions.get('window').height / 14,
+                      height: Dimensions.get('window').height / 14,
+                    }}
+                    imageStyle={{
+                      borderRadius: 120 / 2,
+                      backgroundColor: 100,
+                    }}>
+                    <View style={styles.online}></View>
+                  </ImageBackground>
+                  {/* Name */}
+                  <Text style={styles.text5}>Zeeshan Ali</Text>
+                </View>
 
-              {/* Down Arrow */}
-              <Image
-                source={require('../../../assets/icons/downArrow.png')}
-                resizeMode={'contain'}
-                style={{width: '5%', height: '80%'}}
-              />
-            </View>
+                {/* Down Arrow */}
+
+                <Image
+                  source={require('../../../assets/icons/downArrow.png')}
+                  resizeMode={'contain'}
+                  style={{width: '5%', height: '80%'}}
+                />
+              </View>
+            </Pressable>
             {/* Reviews */}
             <Text style={styles.text5}>12 Reviews</Text>
           </View>
@@ -132,6 +137,11 @@ const SelectServices = ({navigation}) => {
             />
           </View>
         }
+      />
+      {/* Profile Modal */}
+      <ProfileModal
+        visible={profileModalVisible}
+        onPress={() => setProfileModalVisible(false)}
       />
     </View>
   );

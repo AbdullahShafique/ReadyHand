@@ -12,22 +12,30 @@ const Filters = ({navigation}) => {
         <FiltersHeader onPress={() => navigation.goBack()} />
 
         {/* Remote */}
-        <WhiteButton
-          text={'Remote'}
-          Icon={require('../../../assets/icons/downArrow.png')}
-        />
+        <View style={{marginTop: '5%'}}>
+          <WhiteButton
+            text={'Remote'}
+            Icon={require('../../../assets/icons/downArrow.png')}
+          />
+        </View>
+
         {/* Location */}
         <InputFieldWithIcon
           placeholder={'Location'}
           icon={require('../../../assets/icons/current-location.png')}
         />
         {/* Radius */}
-        <WhiteButton text={'Radius'} />
+        <View style={{marginBottom: '5%'}}>
+          <WhiteButton text={'Radius'} />
+        </View>
         {/* Best service providers */}
-        <WhiteButton
-          text={'Best service providers'}
-          Icon={require('../../../assets/icons/tick.png')}
-        />
+        <View style={{marginBottom: '5%'}}>
+          <WhiteButton
+            text={'Best service providers'}
+            Icon={require('../../../assets/icons/tick.png')}
+          />
+        </View>
+
         {/* New comers  */}
         <WhiteButton text={'New comers'} />
         {/* Hourly Rate */}

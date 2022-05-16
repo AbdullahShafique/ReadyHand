@@ -21,11 +21,17 @@ const MainInputField = ({
   eye,
   onEyePress,
   keyboardType,
+  Height = 15,
+  MarginTop = '5%',
 }) => {
   return (
-    <View style={styles.container}>
+    <View style={{...styles.container, marginTop: MarginTop}}>
       <Text style={styles.title}>{title}</Text>
-      <View style={styles.inputField}>
+      <View
+        style={{
+          ...styles.inputField,
+          height: Dimensions.get('window').height / Height,
+        }}>
         <TextInput
           placeholder={placeholder}
           placeholderTextColor={colors.DarkGrey}
@@ -64,7 +70,7 @@ const MainInputField = ({
 export default MainInputField;
 
 const styles = StyleSheet.create({
-  container: {marginTop: '5%'},
+  container: {},
   title: {
     fontFamily: 'OpenSans-Bold',
     color: colors.DarkGrey,
@@ -78,7 +84,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     backgroundColor: colors.Grey,
     width: '85%',
-    height: Dimensions.get('window').height / 15,
+
     borderRadius: 16,
     paddingHorizontal: 20,
     alignSelf: 'center',

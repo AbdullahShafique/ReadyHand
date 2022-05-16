@@ -1,22 +1,24 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, Pressable} from 'react-native';
 import React from 'react';
 import colors from '../../globalStyles/colors';
-const HomeHeader = () => {
+const HomeHeader = ({onPress}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Hi, Username</Text>
       {/* Profile Image */}
-      <Image
-        source={require('../../../assets/images/user_profile.jpg')}
-        resizeMode={'contain'}
-        style={{
-          width: 35,
-          height: 35,
-          alignSelf: 'center',
-          borderRadius: 120 / 2,
-          backgroundColor: 100,
-        }}
-      />
+      <Pressable onPress={onPress}>
+        <Image
+          source={require('../../../assets/images/user_profile.jpg')}
+          resizeMode={'contain'}
+          style={{
+            width: 35,
+            height: 35,
+            alignSelf: 'center',
+            borderRadius: 120 / 2,
+            backgroundColor: 100,
+          }}
+        />
+      </Pressable>
     </View>
   );
 };

@@ -11,7 +11,7 @@ const Home = ({navigation}) => {
   return (
     <View style={styles.container}>
       {/* Header */}
-      <HomeHeader />
+      <HomeHeader onPress={() => navigation.navigate('Dashboard')} />
       {/* Search Bar */}
       <InputFieldWithIcon
         placeholder={'Search by name or location'}

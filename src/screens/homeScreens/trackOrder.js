@@ -10,7 +10,12 @@ const TrackOrder = ({navigation}) => {
   return (
     <View style={styles.container}>
       {/* Header */}
-      <WhiteHeader text={'Track Order'} onPress={() => navigation.goBack()} />
+      <WhiteHeader
+        text={' Track Order'}
+        text2={'Dispute/ Help'}
+        onPress={() => navigation.goBack()}
+        onPress2={() => navigation.navigate('DisputeOrHelp')}
+      />
       {/* Top Card */}
       <BookingCard
         text={
@@ -18,8 +23,15 @@ const TrackOrder = ({navigation}) => {
         }
       />
       {/* order Info */}
-      <View style={{marginHorizontal: '5%'}}>
+      <View
+        style={{
+          marginHorizontal: '5%',
+          borderBottomWidth: 1,
+          paddingBottom: '5%',
+          borderStyle: 'dashed',
+        }}>
         <Text style={styles.text1}>Wed, 12 Sep</Text>
+        {/* Order ID: 5th35-85jy £8.00/Hr*/}
         <View
           style={{
             flexDirection: 'row',
@@ -27,12 +39,46 @@ const TrackOrder = ({navigation}) => {
             marginTop: '5%',
           }}>
           <View style={{flexDirection: 'row'}}>
-            <Text style={styles.text2}>Order ID: </Text>
+            <Text style={styles.text1}>Order ID: </Text>
             <Text style={styles.text3}>5th35-85jy</Text>
           </View>
 
           <Text style={styles.text1}>£8.00/Hr</Text>
         </View>
+        {/* Time 3 Hrs*/}
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginTop: '5%',
+          }}>
+          <Text style={styles.text3}>Time</Text>
+
+          <Text style={styles.text1}>3 Hrs</Text>
+        </View>
+        {/* Service Fee*/}
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginTop: '5%',
+          }}>
+          <Text style={styles.text3}>Service Fee</Text>
+
+          <Text style={styles.text1}>£26.4</Text>
+        </View>
+      </View>
+      {/* Total*/}
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          marginTop: '5%',
+          marginHorizontal: '5%',
+        }}>
+        <Text style={styles.text1}>Total</Text>
+
+        <Text style={styles.text1}>£26.4</Text>
       </View>
       {/* Chat With Service Provider */}
       <WhiteButton
@@ -65,11 +111,7 @@ const styles = StyleSheet.create({
     color: colors.Black,
     fontSize: 16,
   },
-  text2: {
-    fontFamily: 'OpenSans-Bold',
-    color: colors.ExtraDarkGrey,
-    fontSize: 16,
-  },
+  text2: {},
   text3: {
     fontFamily: 'OpenSans-Regular',
     color: colors.Black,
