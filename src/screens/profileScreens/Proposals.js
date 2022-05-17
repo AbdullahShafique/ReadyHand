@@ -33,7 +33,7 @@ const Proposals = ({navigation}) => {
         renderItem={({item, index, separators}) => (
           <Pressable
             key={item.key}
-            onPress={() => navigation.navigate('MaterialTopTabHeader')}>
+            onPress={() => console.log('Proposal Pressed')}>
             <ProposalCard item={item} />
           </Pressable>
         )}

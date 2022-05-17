@@ -115,7 +115,7 @@ const MaterialTopTabNavigation = () => {
         options={{
           tabBarPressColor: 0,
           tabBarScrollEnabled: false,
-          swipeEnabled: false,
+          swipeEnabled: true,
           tabBarPressOpacity: 0,
           tabBarIcon: ({focused}) => (
             <View style={{marginRight: 50}}>

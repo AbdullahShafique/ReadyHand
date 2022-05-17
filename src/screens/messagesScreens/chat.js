@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: '1.5%',
     borderRadius: 17,
-    marginTop: '5%',
+    marginVertical: '5%',
   },
   text1: {
     fontFamily: 'OpenSans-regular',

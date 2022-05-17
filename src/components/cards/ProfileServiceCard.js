@@ -57,7 +57,7 @@ const ProfileServiceCard = ({item}) => {
 export default ProfileServiceCard;
 const styles = StyleSheet.create({
   mainContainer: {
-    width: wp(85),
+    width: wp(90),
     // height: hp(38),
     backgroundColor: '#fff',
     borderRadius: wp(85) / 20,

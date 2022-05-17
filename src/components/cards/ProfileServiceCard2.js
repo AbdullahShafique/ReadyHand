@@ -1,12 +1,11 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import colors from '../../globalStyles/colors';
-
-const ProposalCard = ({item}) => {
+const ProfileServiceCard2 = ({item}) => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.optionPosition}>
@@ -22,7 +21,7 @@ const ProposalCard = ({item}) => {
           source={require('../../../assets/icons/proposal/display-image.png')}
         />
         <View style={{marginLeft: wp(3)}}>
-          <Text numberOfLines={2} style={styles.text1}>
+          <Text style={styles.text1}>
             I need a professional for house cleaning.
           </Text>
           <View style={styles.locationConatainer}>
@@ -44,15 +43,13 @@ const ProposalCard = ({item}) => {
           />
           <Text style={styles.iconText}>2Hrs</Text>
         </View>
-
         <View style={styles.iconContainer}>
           <Image
             style={styles.icon}
             source={require('../../../assets/icons/proposal/money-card.png')}
           />
-          <Text style={styles.iconText}>£ 10.00/Hr</Text>
+          <Text style={styles.iconText}>£ 8.00/Hr</Text>
         </View>
-
         <View style={styles.iconContainer}>
           <Image
             style={styles.icon}
@@ -61,57 +58,24 @@ const ProposalCard = ({item}) => {
           <Text style={styles.iconText}>Spanish</Text>
         </View>
       </View>
-      <View style={styles.verticalLine}></View>
-      <View style={styles.profileContainer}>
-        <Image
-          style={styles.profileImage}
-          resizeMethod="auto"
-          source={require('../../../assets/icons/proposal/profile.png.png')}
-        />
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            width: wp(70),
-            // backgroundColor: 'red',
-            justifyContent: 'space-between',
-          }}>
-          <Text style={styles.profileText}>{item.name}</Text>
-          <View style={styles.chatContainer}>
-            <Image
-              style={styles.chaticon}
-              source={require('../../../assets/icons/proposal/chat-icon.png')}
-            />
-            <Text style={{fontFamily: 'OpenSans-Bold', color: colors.Green}}>
-              Chat
-            </Text>
-          </View>
-        </View>
-      </View>
-      <View style={styles.textContainer}>
-        <Text numberOfLines={2} style={styles.freelancerDes}>
-          I can do this very efficiently. you can see my services and reviews as
-          a reference.
-        </Text>
-      </View>
     </View>
   );
 };
-
-export default ProposalCard;
+export default ProfileServiceCard2;
 const styles = StyleSheet.create({
   mainContainer: {
     width: wp(90),
-    height: hp(38),
-    backgroundColor: '#fff',
+    // height: hp(38),
+    backgroundColor: 'white',
     borderRadius: wp(85) / 20,
     elevation: 5,
     flexDirection: 'column',
     alignItems: 'center',
-    margin: 10,
+    // margin: 10,
+    alignSelf: 'center',
+    marginVertical: hp(1.3),
   },
   optionPosition: {position: 'absolute', right: wp(4), top: hp(-1.5)},
-
   containerOne: {
     marginVertical: hp(2),
     flexDirection: 'row',
@@ -126,7 +90,6 @@ const styles = StyleSheet.create({
   text1: {
     color: '#000',
     width: wp(56),
-    // fontWeight: '400',
     fontSize: 16,
     fontFamily: 'OpenSans-Regular',
   },
@@ -153,7 +116,7 @@ const styles = StyleSheet.create({
   iconMainContainer: {
     paddingVertical: hp(1.6),
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
     width: wp(80),
     paddingBottom: 20,
@@ -163,9 +126,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     // justifyContent: 'space-between',
     alignItems: 'center',
-    // backgroundColor: 'red',
+
     height: hp(2.2),
-    width: wp(25),
+    //width: wp(25),
   },
   icon: {
     width: wp(4.4),
@@ -175,41 +138,5 @@ const styles = StyleSheet.create({
     color: colors.DarkGrey,
     marginLeft: 10,
     fontFamily: 'OpenSans-Regular',
-  },
-  profileImage: {
-    width: wp(10),
-    resizeMode: 'contain',
-    borderRadius: wp(10) / 2,
-    height: hp(5),
-  },
-  profileText: {
-    color: '#000',
-    fontFamily: 'OpenSans-Bold',
-    fontSize: 16,
-    marginLeft: wp(3),
-  },
-  profileContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    // backgroundColor: 'red',
-  },
-  chatContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  chaticon: {
-    width: wp(4),
-    resizeMode: 'contain',
-    marginRight: wp(2),
-  },
-  freelancerDes: {
-    width: wp(70),
-    fontFamily: 'OpenSans-Regular',
-    color: '#000',
-  },
-  textContainer: {
-    width: wp(70),
-    // backgroundColor: 'red',
-    marginLeft: wp(14),
   },
 });

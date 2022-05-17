@@ -1,11 +1,29 @@
-import {StyleSheet, Text, View, Dimensions, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  Image,
+  Pressable,
+} from 'react-native';
 import React from 'react';
 import colors from '../../globalStyles/colors';
 
-const WhiteButton = ({text, Icon, text2, BigIcon, messages, text4}) => {
+const WhiteButton = ({
+  text,
+  Icon,
+  text2,
+  BigIcon,
+  messages,
+  text4,
+  onPress,
+  red,
+}) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{text}</Text>
+    <Pressable style={styles.container} onPress={onPress}>
+      <Text style={{...styles.text, color: red ? 'red' : colors.Black}}>
+        {text}
+      </Text>
       {Icon ? (
         <Image
           source={Icon}
@@ -23,7 +41,7 @@ const WhiteButton = ({text, Icon, text2, BigIcon, messages, text4}) => {
           <Text style={styles.text3}>{messages}</Text>
         </View>
       ) : null}
-    </View>
+    </Pressable>
   );
 };
 
@@ -52,11 +70,12 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: 'OpenSans-Regular',
-    color: colors.Black,
+
     fontSize: 16,
   },
   text2: {
     fontFamily: 'OpenSans-Bold',
+
     color: colors.Black,
     fontSize: 16,
   },
@@ -72,8 +91,8 @@ const styles = StyleSheet.create({
   },
   messagesButton: {
     backgroundColor: colors.Green,
-    height: 33,
-    width: 33,
+    height: Dimensions.get('window').height / 23,
+    width: Dimensions.get('window').height / 23,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 33 / 2,
