@@ -1,18 +1,19 @@
 import {StyleSheet, Text, View, ScrollView} from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import WhiteButtonBold from '../../components/buttons/whiteButtonBold';
+import {AuthContext} from '../../Authentication/authProvider';
 
 const ServiceTakerProfileGeneral = ({navigation}) => {
-  const [isEnabled, setIsEnabled] = useState(false);
-
+  const {setUserType} = useContext(AuthContext);
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       {/* Switch to Service Provider */}
       <WhiteButtonBold
         text={'Switch to Service Provider'}
-        value={isEnabled}
-        onValueChange={() => setIsEnabled(prev => !prev)}
+        value={true}
+        //onValueChange={() => setIsEnabled(prev => !prev)}
         switchButton={true}
+        onChange={() => setUserType('serviceProvider')}
       />
       {/* Proposals */}
       <WhiteButtonBold
@@ -51,7 +52,7 @@ const ServiceTakerProfileGeneral = ({navigation}) => {
         text={'Support'}
         Icon={require('../../../assets/icons/Support.png')}
         RightArrow={true}
-        onPress={() => console.log('Support')}
+        onPress={() => navigation.navigate('Support')}
       />
       {/* Logout */}
       <View style={{marginBottom: '10%'}}>

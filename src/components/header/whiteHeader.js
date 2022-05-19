@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     borderRadius: 30 / 2,
     marginLeft: '10%',
   },
+
   text2: {
     fontFamily: 'OpenSans-Bold',
     color: colors.Green,

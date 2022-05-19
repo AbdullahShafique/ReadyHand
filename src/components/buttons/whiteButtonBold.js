@@ -16,6 +16,7 @@ const WhiteButtonBold = ({
   value,
   Icon,
   RightArrow,
+  onChange,
   onPress,
   red,
   switchButton,
@@ -39,6 +40,7 @@ const WhiteButtonBold = ({
           ios_backgroundColor={colors.Grey}
           onValueChange={onValueChange}
           value={value}
+          onChange={onChange}
         />
       ) : null}
       {/* Right Arrow */}

@@ -35,6 +35,8 @@ const Subscriptions = ({navigation}) => {
       <WhiteHeader
         text={'Create Subscription'}
         onPress={() => navigation.goBack()}
+        text2={'Create New'}
+        onPress2={() => navigation.navigate('CreateSubscription')}
       />
       {/* Toggle Button View */}
       <View style={styles.toggleButtonView}>

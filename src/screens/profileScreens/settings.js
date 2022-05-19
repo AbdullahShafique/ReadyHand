@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import WhiteHeader from '../../components/header/whiteHeader';
 import WhiteButton from '../../components/buttons/whiteButton';
@@ -22,7 +22,7 @@ const Settings = ({navigation}) => {
         <WhiteButton
           text={'Account'}
           Icon={require('../../../assets/icons/rightArrow.png')}
-          onPress={() => console.log('Account')}
+          onPress={() => navigation.navigate('Account')}
         />
       </View>
       {/* Username */}

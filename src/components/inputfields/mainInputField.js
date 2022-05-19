@@ -26,7 +26,7 @@ const MainInputField = ({
 }) => {
   return (
     <View style={{...styles.container, marginTop: MarginTop}}>
-      <Text style={styles.title}>{title}</Text>
+      {title ? <Text style={styles.title}>{title}</Text> : null}
       <View
         style={{
           ...styles.inputField,

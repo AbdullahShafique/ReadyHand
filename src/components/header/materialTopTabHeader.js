@@ -9,7 +9,11 @@ const MaterialTopTabHeader = ({navigation}) => {
       <ImageBackground
         source={require('../../../assets/images/user_profile.jpg')}
         resizeMode={'contain'}
-        style={{width: 120, height: 120, alignSelf: 'center'}}
+        style={{
+          width: Dimensions.get('window').width / 4,
+          height: Dimensions.get('window').width / 4,
+          alignSelf: 'center',
+        }}
         imageStyle={{
           borderRadius: 120 / 2,
           backgroundColor: 100,
