@@ -20,16 +20,20 @@ const Filters = ({navigation}) => {
         </View>
 
         {/* Location */}
-        <InputFieldWithIcon
-          placeholder={'Location'}
-          icon={require('../../../assets/icons/current-location.png')}
-        />
+        <View style={{marginBottom: '2.5%'}}>
+          <InputFieldWithIcon
+            placeholder={'Location'}
+            icon={require('../../../assets/icons/current-location.png')}
+            iconSize={20}
+          />
+        </View>
+
         {/* Radius */}
-        <View style={{marginBottom: '5%'}}>
+        <View style={{marginBottom: '2.5%'}}>
           <WhiteButton text={'Radius'} />
         </View>
         {/* Best service providers */}
-        <View style={{marginBottom: '5%'}}>
+        <View style={{marginBottom: '2.5%'}}>
           <WhiteButton
             text={'Best service providers'}
             Icon={require('../../../assets/icons/tick.png')}

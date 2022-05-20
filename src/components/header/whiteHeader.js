@@ -9,7 +9,15 @@ import {
 import React from 'react';
 import colors from '../../globalStyles/colors';
 
-const WhiteHeader = ({onPress, text, icon, text2, onPress2, text3}) => {
+const WhiteHeader = ({
+  onPress,
+  text,
+  icon,
+  text2,
+  onPress2,
+  text3,
+  noRadius,
+}) => {
   return (
     <View style={styles.container}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -24,7 +32,11 @@ const WhiteHeader = ({onPress, text, icon, text2, onPress2, text3}) => {
 
         {/* Profile Image */}
         {icon ? (
-          <Image source={icon} resizeMode={'contain'} style={styles.profile} />
+          <Image
+            source={icon}
+            resizeMode={'contain'}
+            style={{...styles.profile, borderRadius: noRadius ? 0 : 30 / 2}}
+          />
         ) : null}
         <Text style={styles.text}>{text}</Text>
       </View>
@@ -54,7 +66,7 @@ const styles = StyleSheet.create({
     width: '90%',
     alignSelf: 'center',
     marginTop: '5%',
-    borderColor: colors.Grey,
+    borderColor: colors.DarkGrey,
     justifyContent: 'space-between',
   },
   text: {
@@ -71,7 +83,7 @@ const styles = StyleSheet.create({
   profile: {
     height: 30,
     width: 30,
-    borderRadius: 30 / 2,
+
     marginLeft: '10%',
   },
 

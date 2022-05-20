@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator();
 const HomeNavigator = () => {
   return (
     <Stack.Navigator
-      screenOptions={{headerShown: false}}
+      screenOptions={{headerShown: false, animation: 'fade'}}
       initialRouteName={'Home'}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="SelectServices" component={SelectServices} />

@@ -45,10 +45,10 @@ export default ServiceCard;
 
 const styles = StyleSheet.create({
   card: {
-    height: Dimensions.get('window').width / 2.5,
-    width: Dimensions.get('window').width / 2.5,
+    height: Dimensions.get('window').width / 2.3,
+    width: Dimensions.get('window').width / 2.3,
     borderRadius: 16,
-    margin: '3%',
+    margin: '2%',
     borderWidth: 0,
     backgroundColor: 'white',
     shadowColor: '#000',

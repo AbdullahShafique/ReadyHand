@@ -26,7 +26,7 @@ const FiltersHeader = ({onPress}) => {
           />
         </Pressable>
 
-        <Text style={styles.text}>Clearing</Text>
+        <Text style={styles.text}>Filters</Text>
       </View>
 
       <Text style={styles.text2}>Clear</Text>

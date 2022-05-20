@@ -11,6 +11,7 @@ const ServiceRequests = ({navigation}) => {
         text={'Requested Services'}
         onPress={() => navigation.goBack()}
         text2={'Add New'}
+        onPress2={() => navigation.navigate('AddServiceRequest')}
       />
       {[1, 2, 3].map((item, index) => (
         <ProfileServiceCard

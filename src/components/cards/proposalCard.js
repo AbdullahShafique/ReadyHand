@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, Pressable} from 'react-native';
 import React from 'react';
 import {
   widthPercentageToDP as wp,
@@ -6,12 +6,13 @@ import {
 } from 'react-native-responsive-screen';
 import colors from '../../globalStyles/colors';
 
-const ProposalCard = ({item}) => {
+const ProposalCard = ({item, onPress}) => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.optionPosition}>
         <Image
-          style={{width: wp(0.7), resizeMode: 'contain'}}
+          style={{width: wp(0.7)}}
+          resizeMode={'contain'}
           source={require('../../../assets/icons/proposal/option.png')}
         />
       </View>
@@ -77,7 +78,7 @@ const ProposalCard = ({item}) => {
             justifyContent: 'space-between',
           }}>
           <Text style={styles.profileText}>{item.name}</Text>
-          <View style={styles.chatContainer}>
+          <Pressable style={styles.chatContainer} onPress={onPress}>
             <Image
               style={styles.chaticon}
               source={require('../../../assets/icons/proposal/chat-icon.png')}
@@ -85,7 +86,7 @@ const ProposalCard = ({item}) => {
             <Text style={{fontFamily: 'OpenSans-Bold', color: colors.Green}}>
               Chat
             </Text>
-          </View>
+          </Pressable>
         </View>
       </View>
       <View style={styles.textContainer}>
@@ -115,8 +116,8 @@ const styles = StyleSheet.create({
   containerOne: {
     marginVertical: hp(2),
     flexDirection: 'row',
-    // backgroundColor: 'red',
-    width: wp(78),
+    backgroundColor: 'white',
+    width: wp(81),
     height: hp(10),
     alignItems: 'center',
   },
@@ -156,7 +157,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: wp(80),
-    paddingBottom: 20,
+    paddingBottom: '5%',
     // backgroundColor: 'blue',
   },
   iconContainer: {
@@ -169,7 +170,9 @@ const styles = StyleSheet.create({
   },
   icon: {
     width: wp(4.4),
+
     resizeMode: 'contain',
+    height: hp(4),
   },
   iconText: {
     color: colors.DarkGrey,

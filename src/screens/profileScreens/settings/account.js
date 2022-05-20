@@ -89,9 +89,9 @@ const Account = ({navigation}) => {
       <View style={{marginTop: '10%'}}>
         <SmallButton
           text={'Link Account'}
-          height={Dimensions.get('window').height / 17}
+          height={Dimensions.get('window').height / 16}
           width={Dimensions.get('window').width / 2}
-          onPress={() => console.log('Link Account')}
+          onPress={() => navigation.navigate('LinkAccount')}
         />
       </View>
     </View>

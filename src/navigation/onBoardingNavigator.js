@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 const OnBoardingNavigator = () => {
   return (
     <Stack.Navigator
-      screenOptions={{headerShown: false}}
+      screenOptions={{headerShown: false, animation: 'fade'}}
       initialRouteName={'SelectUserType'}>
       <Stack.Screen name="SelectUserType" component={SelectUserType} />
       <Stack.Screen name="ProfileSetup" component={ProfileSetup} />

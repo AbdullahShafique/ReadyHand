@@ -36,11 +36,11 @@ const Earning = ({navigation}) => {
       />
 
       {/* Earnings December */}
-      <View style={{marginBottom: '5%'}}>
+      <View style={{marginBottom: '2.5%'}}>
         <WhiteButton text={'Earnings December'} text2={'$215'} />
       </View>
       {/* Available for withdrawl */}
-      <View style={{marginBottom: '5%'}}>
+      <View style={{marginBottom: '2.5%'}}>
         <WhiteButton text={'Available for withdrawl'} text2={'£125'} />
       </View>
       <View style={{marginBottom: '0%'}}>
@@ -52,8 +52,12 @@ const Earning = ({navigation}) => {
         Icon={require('../../../assets/icons/revenue.png')}
       />
       {/* Withdraw */}
-      <View style={{marginBottom: '5%'}}>
-        <WhiteButton text={'Withdraw'} text2={'£100'} />
+      <View style={{marginBottom: '2.5%'}}>
+        <WhiteButton
+          text={'Withdraw'}
+          text2={'£100'}
+          onPress={() => navigation.navigate('Withdraw')}
+        />
       </View>
 
       <View style={{marginBottom: '5%'}}>

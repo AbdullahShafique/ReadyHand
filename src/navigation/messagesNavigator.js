@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 const MessagesNavigator = () => {
   return (
     <Stack.Navigator
-      screenOptions={{headerShown: false}}
+      screenOptions={{headerShown: false, animation: 'fade'}}
       initialRouteName={'Messages'}>
       <Stack.Screen name="Messages" component={Messages} />
       <Stack.Screen name="Chat" component={Chat} />

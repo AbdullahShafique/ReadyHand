@@ -13,13 +13,15 @@ const Home = ({navigation}) => {
       {/* Header */}
       <HomeHeader onPress={() => navigation.navigate('Dashboard')} />
       {/* Search Bar */}
-      <InputFieldWithIcon
-        placeholder={'Search by name or location'}
-        icon={require('../../../assets/icons/filter.png')}
-        iconSize={18}
-        onSubmitEditing={() => navigation.navigate('Search')}
-        onPress={() => navigation.navigate('Filters')}
-      />
+      <View style={{marginBottom: '5%'}}>
+        <InputFieldWithIcon
+          placeholder={'Search by name or location'}
+          icon={require('../../../assets/icons/filter.png')}
+          iconSize={18}
+          onSubmitEditing={() => navigation.navigate('Search')}
+          onPress={() => navigation.navigate('Filters')}
+        />
+      </View>
 
       {/* Horizontal Flatlist */}
       <FlatList

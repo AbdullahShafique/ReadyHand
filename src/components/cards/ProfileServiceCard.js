@@ -132,5 +132,8 @@ const styles = StyleSheet.create({
     color: colors.DarkGrey,
     marginLeft: 10,
     fontFamily: 'OpenSans-Regular',
+
+    width: '80%',
+    height: '100%',
   },
 });

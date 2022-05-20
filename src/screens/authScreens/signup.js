@@ -11,107 +11,104 @@ import {AuthContext} from '../../Authentication/authProvider';
 const Signup = ({navigation}) => {
   const {signup} = useContext(AuthContext);
   return (
-    <KeyboardAwareScrollView contentContainerStyle={{flex: 1}}>
-      <View style={styles.container}>
-        <MainHeader text={'Sign Up'} onPress={() => navigation.goBack()} />
+    <KeyboardAwareScrollView style={styles.container}>
+      <MainHeader text={'Sign Up'} onPress={() => navigation.goBack()} />
 
-        <Formik
-          initialValues={{
-            email: '',
-            password: '',
-            confirmPassword: '',
-            ShowPassword: false,
-            confirmShowPassword: false,
-          }}
-          onSubmit={values => {
-            signup();
-            console.log('Values:', values);
-          }}>
-          {formikProps => (
-            <View style={{flex: 1}}>
-              {/*Top Text  */}
-              <View style={{marginTop: '2%', marginBottom: '5%'}}>
-                <Text style={styles.text1}>Join ReadyHands</Text>
-                <Text style={styles.text2}>
-                  Be a part of service providers community
-                </Text>
-              </View>
-
-              {/* Email */}
-
-              <MainInputField
-                title={'Username or Email'}
-                placeholder={'Enter username or email'}
-                value={formikProps.values.email}
-                onChangeText={formikProps.handleChange('email')}
-                ShowPassword={true}
-                autoCapitalize="none"
-                onBlur={formikProps.handleBlur('email')}
-                eye={false}
-              />
-              {/* Password */}
-
-              <MainInputField
-                title={'Password'}
-                placeholder={'Enter Password'}
-                value={formikProps.values.password}
-                onChangeText={formikProps.handleChange('password')}
-                ShowPassword={formikProps.values.ShowPassword}
-                autoCapitalize="none"
-                onBlur={formikProps.handleBlur('password')}
-                eye={true}
-                onEyePress={() =>
-                  formikProps.setFieldValue(
-                    'ShowPassword',
-                    !formikProps.values.ShowPassword,
-                  )
-                }
-              />
-
-              {/* Confirm Password */}
-
-              <MainInputField
-                title={'Confirm Password'}
-                placeholder={'Re-enter Password'}
-                value={formikProps.values.confirmPassword}
-                onChangeText={formikProps.handleChange('confirmPassword')}
-                ShowPassword={formikProps.values.confirmShowPassword}
-                autoCapitalize="none"
-                onBlur={formikProps.handleBlur('confirmPassword')}
-                eye={true}
-                onEyePress={() =>
-                  formikProps.setFieldValue(
-                    'confirmShowPassword',
-                    !formikProps.values.confirmShowPassword,
-                  )
-                }
-              />
-
-              {/* Sign in Button */}
-              <View style={{marginTop: '10%'}}>
-                <MainButton
-                  text={'Sign Up'}
-                  onPress={() => formikProps.handleSubmit()}
-                />
-              </View>
-
-              {/*Bottom Text  */}
-              <View
-                style={{
-                  flexDirection: 'row',
-                  alignSelf: 'center',
-                  position: 'absolute',
-                  bottom: '5%',
-                }}>
-                <Text style={styles.text4}>Already have an account? </Text>
-
-                <Pressable onPress={() => navigation.navigate('Login')}>
-                  <Text style={styles.text5}>Sign In</Text>
-                </Pressable>
-              </View>
+      <Formik
+        initialValues={{
+          email: '',
+          password: '',
+          confirmPassword: '',
+          ShowPassword: false,
+          confirmShowPassword: false,
+        }}
+        onSubmit={values => {
+          signup();
+          console.log('Values:', values);
+        }}>
+        {formikProps => (
+          <View style={{flex: 1}}>
+            {/*Top Text  */}
+            <View style={{marginTop: '2%', marginBottom: '5%'}}>
+              <Text style={styles.text1}>Join ReadyHands</Text>
+              <Text style={styles.text2}>
+                Be a part of service providers community
+              </Text>
             </View>
-          )}
-        </Formik>
+
+            {/* Email */}
+
+            <MainInputField
+              title={'Username or Email'}
+              placeholder={'Enter username or email'}
+              value={formikProps.values.email}
+              onChangeText={formikProps.handleChange('email')}
+              ShowPassword={true}
+              autoCapitalize="none"
+              onBlur={formikProps.handleBlur('email')}
+              eye={false}
+            />
+            {/* Password */}
+
+            <MainInputField
+              title={'Password'}
+              placeholder={'Enter Password'}
+              value={formikProps.values.password}
+              onChangeText={formikProps.handleChange('password')}
+              ShowPassword={formikProps.values.ShowPassword}
+              autoCapitalize="none"
+              onBlur={formikProps.handleBlur('password')}
+              eye={true}
+              onEyePress={() =>
+                formikProps.setFieldValue(
+                  'ShowPassword',
+                  !formikProps.values.ShowPassword,
+                )
+              }
+            />
+
+            {/* Confirm Password */}
+
+            <MainInputField
+              title={'Confirm Password'}
+              placeholder={'Re-enter Password'}
+              value={formikProps.values.confirmPassword}
+              onChangeText={formikProps.handleChange('confirmPassword')}
+              ShowPassword={formikProps.values.confirmShowPassword}
+              autoCapitalize="none"
+              onBlur={formikProps.handleBlur('confirmPassword')}
+              eye={true}
+              onEyePress={() =>
+                formikProps.setFieldValue(
+                  'confirmShowPassword',
+                  !formikProps.values.confirmShowPassword,
+                )
+              }
+            />
+
+            {/* Sign in Button */}
+            <View style={{marginTop: '10%'}}>
+              <MainButton
+                text={'Sign Up'}
+                onPress={() => formikProps.handleSubmit()}
+              />
+            </View>
+          </View>
+        )}
+      </Formik>
+      {/*Bottom Text  */}
+      <View
+        style={{
+          flexDirection: 'row',
+          alignSelf: 'center',
+          marginTop: '15%',
+          marginBottom: '5%',
+        }}>
+        <Text style={styles.text4}>Already have an account? </Text>
+
+        <Pressable onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.text5}>Sign In</Text>
+        </Pressable>
       </View>
     </KeyboardAwareScrollView>
   );

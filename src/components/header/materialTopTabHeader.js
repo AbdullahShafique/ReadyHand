@@ -1,4 +1,10 @@
-import {StyleSheet, Text, View, ImageBackground} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  Dimensions,
+} from 'react-native';
 import React from 'react';
 import MainHeader from './mainHeader';
 import MaterialTopTabNavigation from '../../navigation/materialTopTabNavigation';

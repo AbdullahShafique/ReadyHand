@@ -13,7 +13,7 @@ const Settings = ({navigation}) => {
         <WhiteButton
           text={'Currency'}
           Icon={require('../../../assets/icons/rightArrow.png')}
-          onPress={() => console.log('Currency')}
+          onPress={() => navigation.navigate('Currency')}
         />
       </View>
 
@@ -30,7 +30,7 @@ const Settings = ({navigation}) => {
         <WhiteButton
           text={'Username'}
           Icon={require('../../../assets/icons/rightArrow.png')}
-          onPress={() => console.log('Username')}
+          onPress={() => navigation.navigate('Username')}
         />
       </View>
       {/* Email */}
@@ -38,7 +38,7 @@ const Settings = ({navigation}) => {
         <WhiteButton
           text={'Email'}
           Icon={require('../../../assets/icons/rightArrow.png')}
-          onPress={() => console.log('Email')}
+          onPress={() => navigation.navigate('Email')}
         />
       </View>
       {/* Password */}
@@ -46,7 +46,7 @@ const Settings = ({navigation}) => {
         <WhiteButton
           text={'Password'}
           Icon={require('../../../assets/icons/rightArrow.png')}
-          onPress={() => console.log('Password')}
+          onPress={() => navigation.navigate('Password')}
         />
       </View>
       {/* Distance */}
@@ -54,7 +54,7 @@ const Settings = ({navigation}) => {
         <WhiteButton
           text={'Distance'}
           Icon={require('../../../assets/icons/rightArrow.png')}
-          onPress={() => console.log('Distance')}
+          onPress={() => navigation.navigate('Distance')}
         />
       </View>
 

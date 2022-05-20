@@ -31,11 +31,11 @@ const Proposals = ({navigation}) => {
         data={data}
         showsVerticalScrollIndicator={false}
         renderItem={({item, index, separators}) => (
-          <Pressable
+          <ProposalCard
             key={item.key}
-            onPress={() => console.log('Proposal Pressed')}>
-            <ProposalCard item={item} />
-          </Pressable>
+            onPress={() => navigation.navigate('Chat')}
+            item={item}
+          />
         )}
       />
     </View>

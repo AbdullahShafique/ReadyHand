@@ -86,7 +86,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderBottomWidth: 1,
     borderColor: colors.DarkGrey,
-    paddingVertical: '4%',
+    paddingTop: '4%',
+    paddingBottom: '2%',
   },
   imageStyle: {
     width: Dimensions.get('window').width / 7,

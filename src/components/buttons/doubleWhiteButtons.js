@@ -2,12 +2,12 @@ import {StyleSheet, Text, View, Dimensions} from 'react-native';
 import React from 'react';
 import colors from '../../globalStyles/colors';
 
-const DoubleWhiteButtons = ({}) => {
+const DoubleWhiteButtons = ({text1, text2, text3, text4}) => {
   return (
     <View style={styles.container}>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <Text style={styles.text}>{'Current Balance'}</Text>
-        <Text style={styles.text2}>{'£100'}</Text>
+        <Text style={styles.text}>{text1}</Text>
+        <Text style={styles.text2}>{text2}</Text>
       </View>
       <View
         style={{
@@ -16,8 +16,8 @@ const DoubleWhiteButtons = ({}) => {
           backgroundColor: colors.Grey,
         }}></View>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <Text style={styles.text}>{'Available for withdrawl'}</Text>
-        <Text style={styles.text2}>{'£80'}</Text>
+        <Text style={styles.text}>{text3}</Text>
+        <Text style={styles.text2}>{text4}</Text>
       </View>
     </View>
   );

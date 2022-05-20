@@ -14,6 +14,15 @@ import CreateSubscription from '../screens/profileScreens/createSubscription';
 import ServiceRequests from '../screens/profileScreens/serviceRequests';
 import Payment from '../screens/profileScreens/payment';
 import Support from '../screens/profileScreens/support';
+import AddServiceRequest from '../screens/profileScreens/addServiceRequest';
+import LinkAccount from '../screens/profileScreens/settings/linkAccount';
+import Distance from '../screens/profileScreens/settings/distance';
+import Currency from '../screens/profileScreens/settings/currency';
+import Username from '../screens/profileScreens/settings/username';
+import Email from '../screens/profileScreens/settings/email';
+import Password from '../screens/profileScreens/settings/password';
+import Withdraw from '../screens/profileScreens/settings/withdraw';
+import Chat from '../screens/messagesScreens/chat';
 
 import {AuthContext} from '../Authentication/authProvider';
 
@@ -25,7 +34,7 @@ const ProfileNavigator = ({navigation}) => {
   useEffect(() => console.log('userType:', userType), []);
 
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator screenOptions={{headerShown: false, animation: 'fade'}}>
       {userType == 'serviceTaker' ? (
         <Stack.Screen
           name="ServiceTakerProfile"
@@ -48,6 +57,15 @@ const ProfileNavigator = ({navigation}) => {
       <Stack.Screen name="ServiceRequests" component={ServiceRequests} />
       <Stack.Screen name="Payment" component={Payment} />
       <Stack.Screen name="Support" component={Support} />
+      <Stack.Screen name="AddServiceRequest" component={AddServiceRequest} />
+      <Stack.Screen name="LinkAccount" component={LinkAccount} />
+      <Stack.Screen name="Distance" component={Distance} />
+      <Stack.Screen name="Currency" component={Currency} />
+      <Stack.Screen name="Username" component={Username} />
+      <Stack.Screen name="Email" component={Email} />
+      <Stack.Screen name="Password" component={Password} />
+      <Stack.Screen name="Withdraw" component={Withdraw} />
+      <Stack.Screen name="Chat" component={Chat} />
 
       <Stack.Screen
         name="MaterialTopTabHeader"

@@ -5,6 +5,7 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import WhiteHeader from '../../components/header/whiteHeader';
 import MainInputField from '../../components/inputfields/mainInputField';
 import SmallButton from '../../components/buttons/smallButton';
+import colors from '../../globalStyles/colors';
 
 const Support = ({navigation}) => {
   return (
@@ -16,6 +17,10 @@ const Support = ({navigation}) => {
         resizeMode={'contain'}
         style={styles.topImage}
       />
+      {/* How we can help you? */}
+      <Text style={styles.text1}>How we can help you?</Text>
+      {/* Please write message to support team */}
+      <Text style={styles.text2}>Please write message to support team</Text>
       <Formik initialValues={{Title: '', Description: ''}}>
         {formikProps => (
           <View style={{flex: 1}}>
@@ -25,8 +30,9 @@ const Support = ({navigation}) => {
             <View style={{marginBottom: '5%'}}>
               <MainInputField
                 placeholder={'Description'}
-                Height={4}
+                Height={5}
                 MarginTop={'0%'}
+                multiline={true}
               />
             </View>
             <View style={{marginTop: '5%'}}>
@@ -55,5 +61,18 @@ const styles = StyleSheet.create({
     height: '25%',
     alignSelf: 'center',
     marginTop: '5%',
+  },
+  text1: {
+    fontFamily: 'OpenSans-Bold',
+    color: colors.Black,
+    fontSize: 20,
+    alignSelf: 'center',
+    marginTop: '5%',
+  },
+  text2: {
+    fontFamily: 'OpenSans-Regular',
+    color: colors.DarkGrey,
+    fontSize: 12,
+    alignSelf: 'center',
   },
 });

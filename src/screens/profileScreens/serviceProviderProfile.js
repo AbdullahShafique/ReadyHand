@@ -52,7 +52,7 @@ const ServiceProviderProfile = ({navigation}) => {
           text={'My Profile'}
           Icon={require('../../../assets/icons/MyProfile.png')}
           RightArrow={true}
-          onPress={() => navigation.navigate('MyProfile')}
+          onPress={() => navigation.navigate('MaterialTopTabHeader')}
         />
         {/* Payments */}
         <WhiteButtonBold

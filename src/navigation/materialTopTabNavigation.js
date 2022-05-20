@@ -20,133 +20,20 @@ const Tab = createMaterialTopTabNavigator();
 const MaterialTopTabNavigation = () => {
   return (
     <Tab.Navigator
+      initialRouteName="ServiceTakerProfileGeneral"
       screenOptions={{
-        tabBarItemStyle: {
-          // width: wp(33),
-          backgroundColor: 'white',
+        tabBarActiveTintColor: colors.Green,
+        tabBarInactiveTintColor: colors.DarkGrey,
+        tabBarIndicatorStyle: {
+          backgroundColor: colors.Green,
+          width: '5%',
+          marginLeft: '10%',
         },
-
-        tabBarIndicator: false,
-      }}
-      initialRouteName="Settings"
-      // activeColor="#f0edf6"
-
-      // tabBarOptions={{
-      //   style: {
-      //     elevation: 0,
-      //     right: wp(5),
-      //     backgroundColor: '#ffff',
-      //     colors: 'red',
-      //   },
-      //   showLabel: true,
-      //   labelStyle: {fontSize: 14},
-      //   showIcon: true,
-      // }}
-    >
-      <Tab.Screen
-        options={{
-          swipeEnabled: true,
-          tabBarBounces: false,
-          tabBarPressColor: 0,
-          tabBarIcon: ({focused}) => (
-            <View style={{paddingRight: 30}}>
-              <Text
-                style={{
-                  color: focused ? colors.Green : colors.DarkGrey,
-                  width: wp(18),
-                  fontFamily: 'OpenSans-Bold',
-                  fontSize: 16,
-                }}>
-                General
-              </Text>
-              <View
-                style={{
-                  borderWidth: focused ? 2 : 0,
-                  // backgroundColor: focused ? colors.Green : colors.DarkGrey,
-                  width: widthPercentageToDP(16),
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderColor: focused ? colors.Green : null,
-                  marginTop: hp(0.8),
-                  //   borderRadius: 65,
-                }}></View>
-            </View>
-          ),
-          tabBarShowLabel: false,
-          headerShown: false,
-        }}
-        name="GeneralServiceTaker"
-        component={GeneralServiceTaker}
-      />
-      <Tab.Screen
-        options={{
-          tabBarPressColor: 0,
-          tabBarIcon: ({focused}) => (
-            <View>
-              <Text
-                style={{
-                  color: focused ? colors.Green : colors.DarkGrey,
-                  width: wp(18),
-                  fontFamily: 'OpenSans-Bold',
-                  fontSize: 16,
-                }}>
-                Service
-              </Text>
-              <View
-                style={{
-                  borderWidth: focused ? 2 : 0,
-                  // backgroundColor: focused ? colors.Green : colors.DarkGrey,
-                  width: widthPercentageToDP(14),
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderColor: focused ? colors.Green : null,
-                  marginTop: hp(0.8),
-                  //   borderRadius: 65,
-                }}></View>
-            </View>
-          ),
-          tabBarShowLabel: false,
-          headerShown: false,
-        }}
-        name="Service"
-        component={Service}
-      />
-      <Tab.Screen
-        options={{
-          tabBarPressColor: 0,
-          tabBarScrollEnabled: false,
-          swipeEnabled: true,
-          tabBarPressOpacity: 0,
-          tabBarIcon: ({focused}) => (
-            <View style={{marginRight: 50}}>
-              <Text
-                style={{
-                  color: focused ? colors.Green : colors.DarkGrey,
-                  width: wp(18),
-                  fontFamily: 'OpenSans-Bold',
-                  fontSize: 16,
-                }}>
-                Reviews
-              </Text>
-              <View
-                style={{
-                  borderWidth: focused ? 2 : 0,
-
-                  width: widthPercentageToDP(17),
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderColor: focused ? colors.Green : null,
-                  marginTop: hp(0.8),
-                }}></View>
-            </View>
-          ),
-          tabBarShowLabel: false,
-          headerShown: false,
-        }}
-        name="Reviews"
-        component={Reviews}
-      />
-      {/* <Tab.Screen name="Setting" component={ServiceTakerReview} /> */}
+        tabBarLabelStyle: styles.text,
+      }}>
+      <Tab.Screen name="General" component={GeneralServiceTaker} />
+      <Tab.Screen name="Service" component={Service} />
+      <Tab.Screen name="Reviews" component={Reviews} />
     </Tab.Navigator>
   );
 };

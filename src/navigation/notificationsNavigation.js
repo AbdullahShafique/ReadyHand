@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 const NotificationsNavigation = () => {
   return (
     <Stack.Navigator
-      screenOptions={{headerShown: false}}
+      screenOptions={{headerShown: false, animation: 'fade'}}
       initialRouteName={'Notifications'}>
       <Stack.Screen name="Notifications" component={Notifications} />
     </Stack.Navigator>

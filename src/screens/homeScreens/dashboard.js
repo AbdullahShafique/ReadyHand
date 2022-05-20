@@ -54,7 +54,12 @@ const Dashboard = ({navigation}) => {
         Icon={require('../../../assets/icons/earning.png')}
       />
       {/* Double White Button */}
-      <DoubleWhiteButtons />
+      <DoubleWhiteButtons
+        text1={'Current Balance'}
+        text2={'£100'}
+        text3={'Available for withdrawl'}
+        text4={'£80'}
+      />
       {/* Services */}
       <SectionHeader
         hText={'Services'}

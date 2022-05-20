@@ -5,16 +5,21 @@ import {
   ImageBackground,
   Image,
   ScrollView,
+  Pressable,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import colors from '../../globalStyles/colors';
 import MainHeader from '../../components/header/mainHeader';
+import ChatModal from '../../components/modals/chatModal';
+import LanguageModal from '../../components/modals/languageModal';
 
 const MyProfile = ({navigation}) => {
+  const [editModal, setEditModal] = useState(false);
+  const [languageModal, setlanguageModal] = useState(false);
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -45,7 +50,11 @@ const MyProfile = ({navigation}) => {
                 marginRight: wp(3),
               }}>
               <Text style={styles.lanText}>User Information</Text>
-              <Text style={{...styles.lanText, color: colors.Green}}>Edit</Text>
+              <Pressable onPress={() => setEditModal(true)}>
+                <Text style={{...styles.lanText, color: colors.Green}}>
+                  Edit
+                </Text>
+              </Pressable>
             </View>
             <View style={styles.verticalLine}></View>
             <View style={styles.languageContainer}>
@@ -79,7 +88,11 @@ const MyProfile = ({navigation}) => {
                 marginRight: wp(3),
               }}>
               <Text style={styles.lanText}>Languages</Text>
-              <Text style={{...styles.lanText, color: colors.Green}}>Add</Text>
+              <Pressable onPress={() => setlanguageModal(true)}>
+                <Text style={{...styles.lanText, color: colors.Green}}>
+                  Add
+                </Text>
+              </Pressable>
             </View>
             <View style={styles.verticalLine}></View>
             <View style={styles.languageContainer}>
@@ -118,6 +131,13 @@ const MyProfile = ({navigation}) => {
           </View>
         </ScrollView>
       </ScrollView>
+      {/* ChatModal */}
+      <ChatModal visibility={editModal} onPress={() => setEditModal(false)} />
+      {/* LanguageModal */}
+      <LanguageModal
+        visibility={languageModal}
+        onPress={() => setlanguageModal(false)}
+      />
     </View>
   );
 };
@@ -153,7 +173,7 @@ const styles = StyleSheet.create({
     marginVertical: hp(1),
   },
   verticalLine: {
-    width: wp(78),
+    width: wp(90),
     borderWidth: 1,
     // color: colors.Grey,
     borderColor: colors.Grey,

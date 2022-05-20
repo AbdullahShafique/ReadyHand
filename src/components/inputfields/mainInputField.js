@@ -15,7 +15,7 @@ const MainInputField = ({
   placeholder,
   value,
   onChangeText,
-  ShowPassword,
+  ShowPassword = true,
   autoCapitalize,
   onBlur,
   eye,
@@ -23,6 +23,7 @@ const MainInputField = ({
   keyboardType,
   Height = 15,
   MarginTop = '5%',
+  multiline,
 }) => {
   return (
     <View style={{...styles.container, marginTop: MarginTop}}>
@@ -34,6 +35,7 @@ const MainInputField = ({
         }}>
         <TextInput
           placeholder={placeholder}
+          multiline={multiline}
           placeholderTextColor={colors.DarkGrey}
           value={value}
           onChangeText={onChangeText}
@@ -41,7 +43,10 @@ const MainInputField = ({
           autoCapitalize={autoCapitalize}
           onBlur={onBlur}
           underlineColorAndroid="transparent"
-          style={{width: '90%'}}
+          style={{
+            width: '100%',
+            textAlignVertical: multiline ? 'top' : 'center',
+          }}
           keyboardType={keyboardType}
         />
         {/*eye  */}
@@ -84,12 +89,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     backgroundColor: colors.Grey,
     width: '85%',
-
     borderRadius: 16,
     paddingHorizontal: 20,
     alignSelf: 'center',
     flexDirection: 'row',
-    alignItems: 'center',
+    //alignItems: 'center',
     justifyContent: 'space-between',
   },
 });
