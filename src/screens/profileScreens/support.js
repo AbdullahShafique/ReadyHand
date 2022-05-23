@@ -10,7 +10,11 @@ import colors from '../../globalStyles/colors';
 const Support = ({navigation}) => {
   return (
     <KeyboardAwareScrollView contentContainerStyle={styles.container}>
-      <WhiteHeader text={'Support'} onPress={() => navigation.goBack()} />
+      <WhiteHeader
+        text={'Support'}
+        onPress={() => navigation.goBack()}
+        bigFonts={true}
+      />
       {/* Top Image */}
       <Image
         source={require('../../../assets/icons/supportTopImage.png')}
@@ -38,7 +42,7 @@ const Support = ({navigation}) => {
             <View style={{marginTop: '5%'}}>
               <SmallButton
                 text={'Send'}
-                width={'70%'}
+                width={'50%'}
                 height={Dimensions.get('window').height / 15}
               />
             </View>
@@ -58,7 +62,7 @@ const styles = StyleSheet.create({
   },
   topImage: {
     width: '50%',
-    height: '25%',
+    height: Dimensions.get('window').height / 4,
     alignSelf: 'center',
     marginTop: '5%',
   },

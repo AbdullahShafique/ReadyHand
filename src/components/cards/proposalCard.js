@@ -1,4 +1,11 @@
-import {View, Text, StyleSheet, Image, Pressable} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Pressable,
+  Dimensions,
+} from 'react-native';
 import React from 'react';
 import {
   widthPercentageToDP as wp,
@@ -8,92 +15,113 @@ import colors from '../../globalStyles/colors';
 
 const ProposalCard = ({item, onPress}) => {
   return (
-    <View style={styles.mainContainer}>
-      <View style={styles.optionPosition}>
+    <View style={styles.container}>
+      <View style={styles.top}>
         <Image
-          style={{width: wp(0.7)}}
+          source={require('../../../assets/images/p1.png')}
           resizeMode={'contain'}
-          source={require('../../../assets/icons/proposal/option.png')}
-        />
-      </View>
-      <View style={styles.containerOne}>
-        <Image
-          style={styles.image1}
-          resizeMode="contain"
-          source={require('../../../assets/icons/proposal/display-image.png')}
-        />
-        <View style={{marginLeft: wp(3)}}>
-          <Text numberOfLines={2} style={styles.text1}>
-            I need a professional for house cleaning.
-          </Text>
-          <View style={styles.locationConatainer}>
-            <Image
-              resizeMode="contain"
-              style={{width: wp(6)}}
-              source={require('../../../assets/icons/proposal/location.png')}
-            />
-            <Text style={styles.locationText}>{item.addres}</Text>
-          </View>
-        </View>
-      </View>
-      <View style={styles.verticalLine}></View>
-      <View style={styles.iconMainContainer}>
-        <View style={styles.iconContainer}>
-          <Image
-            style={styles.icon}
-            source={require('../../../assets/icons/proposal/time.png')}
-          />
-          <Text style={styles.iconText}>2Hrs</Text>
-        </View>
-
-        <View style={styles.iconContainer}>
-          <Image
-            style={styles.icon}
-            source={require('../../../assets/icons/proposal/money-card.png')}
-          />
-          <Text style={styles.iconText}>£ 10.00/Hr</Text>
-        </View>
-
-        <View style={styles.iconContainer}>
-          <Image
-            style={styles.icon}
-            source={require('../../../assets/icons/proposal/langauge.png')}
-          />
-          <Text style={styles.iconText}>Spanish</Text>
-        </View>
-      </View>
-      <View style={styles.verticalLine}></View>
-      <View style={styles.profileContainer}>
-        <Image
-          style={styles.profileImage}
-          resizeMethod="auto"
-          source={require('../../../assets/icons/proposal/profile.png.png')}
+          style={{
+            width: Dimensions.get('window').width * 0.2,
+            height: Dimensions.get('window').width * 0.18,
+            borderRadius: 8,
+          }}
         />
         <View
           style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            width: wp(70),
-            // backgroundColor: 'red',
+            width: '60%',
+            height: Dimensions.get('window').width * 0.18,
             justifyContent: 'space-between',
           }}>
-          <Text style={styles.profileText}>{item.name}</Text>
-          <Pressable style={styles.chatContainer} onPress={onPress}>
+          <Text numberOfLines={2} style={styles.text1}>
+            I need a professional for house cleaning. I need a professional for
+            house cleaning.
+          </Text>
+          <View style={{flexDirection: 'row'}}>
             <Image
-              style={styles.chaticon}
-              source={require('../../../assets/icons/proposal/chat-icon.png')}
+              source={require('../../../assets/icons/proposal/location.png')}
+              resizeMode={'contain'}
+              style={{
+                width: 20,
+                height: 20,
+
+                marginRight: '5%',
+              }}
             />
-            <Text style={{fontFamily: 'OpenSans-Bold', color: colors.Green}}>
-              Chat
+            <Text style={styles.text2} numberOfLines={1}>
+              197 Cedar Street London
             </Text>
-          </Pressable>
+          </View>
+        </View>
+        <Image
+          source={require('../../../assets/icons/proposal/option.png')}
+          resizeMode={'contain'}
+          style={{
+            width: '5%',
+            height: '20%',
+          }}
+        />
+      </View>
+      {/* Middle */}
+      <View style={styles.middle}>
+        {/* Time */}
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Image
+            source={require('../../../assets/icons/time.png')}
+            resizeMode={'contain'}
+            style={{width: 14, height: 14, marginRight: 15}}
+          />
+          <Text style={styles.text3}>2Hrs</Text>
+        </View>
+        {/* Rate */}
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Image
+            source={require('../../../assets/icons/rate.png')}
+            resizeMode={'contain'}
+            style={{width: 14, height: 14, marginRight: 15}}
+          />
+          <Text style={styles.text3}>£ 10.00/Hr</Text>
+        </View>
+        {/* Language */}
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Image
+            source={require('../../../assets/icons/proposal/langauge.png')}
+            resizeMode={'contain'}
+            style={{width: 14, height: 14, marginRight: 15}}
+          />
+          <Text style={styles.text3}>Spanish</Text>
         </View>
       </View>
-      <View style={styles.textContainer}>
-        <Text numberOfLines={2} style={styles.freelancerDes}>
-          I can do this very efficiently. you can see my services and reviews as
-          a reference.
-        </Text>
+      {/* Bottom */}
+      <View style={styles.bottom}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <Image
+              source={require('../../../assets/images/p5.png')}
+              resizeMode={'contain'}
+              style={{width: 30, height: 30, borderRadius: 15}}
+            />
+            <Text style={styles.text4}>Zeeshan Ali</Text>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+            }}>
+            <Image
+              source={require('../../../assets/icons/proposal/chat-icon.png')}
+              resizeMode={'contain'}
+              style={{width: 16, height: 16, borderRadius: 15}}
+            />
+            <Text style={styles.text5}>Chat</Text>
+          </View>
+        </View>
+        <View>
+          <Text style={styles.text6}>
+            I can do this very efficiently. you can see my services and reviews
+            as a reference.
+          </Text>
+        </View>
       </View>
     </View>
   );
@@ -101,118 +129,71 @@ const ProposalCard = ({item, onPress}) => {
 
 export default ProposalCard;
 const styles = StyleSheet.create({
-  mainContainer: {
-    width: wp(90),
-    height: hp(38),
-    backgroundColor: '#fff',
-    borderRadius: wp(85) / 20,
-    elevation: 5,
-    flexDirection: 'column',
-    alignItems: 'center',
-    margin: 10,
-  },
-  optionPosition: {position: 'absolute', right: wp(4), top: hp(-1.5)},
-
-  containerOne: {
-    marginVertical: hp(2),
-    flexDirection: 'row',
+  container: {
+    width: Dimensions.get('window').width * 0.9,
+    height: Dimensions.get('window').height / 3,
+    marginTop: '5%',
     backgroundColor: 'white',
-    width: wp(81),
-    height: hp(10),
-    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    borderRadius: 16,
+    justifyContent: 'space-between',
+    padding: '5%',
   },
-  image1: {
-    width: wp(18),
-  },
-  text1: {
-    color: '#000',
-    width: wp(56),
-    // fontWeight: '400',
-    fontSize: 16,
-    fontFamily: 'OpenSans-Regular',
-  },
-  locationConatainer: {
-    flexDirection: 'row',
-    // backgroundColor: 'red',
-    height: hp(5),
-    alignItems: 'center',
-    // justifyContent: 'center',
-  },
-  locationText: {
-    color: '#000',
-    // fontWeight: '700',
-    marginLeft: wp(1.5),
-    paddingTop: hp(1.3),
-    fontFamily: 'OpenSans-Bold',
-  },
-  verticalLine: {
-    width: wp(80),
-    borderWidth: 1,
-    // color: colors.Grey,
-    borderColor: colors.Grey,
-  },
-  iconMainContainer: {
-    paddingVertical: hp(1.6),
+  top: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    width: wp(80),
-    paddingBottom: '5%',
-    // backgroundColor: 'blue',
   },
-  iconContainer: {
-    flexDirection: 'row',
-    // justifyContent: 'space-between',
-    alignItems: 'center',
-    // backgroundColor: 'red',
-    height: hp(2.2),
-    width: wp(25),
-  },
-  icon: {
-    width: wp(4.4),
-
-    resizeMode: 'contain',
-    height: hp(4),
-  },
-  iconText: {
-    color: colors.DarkGrey,
-    marginLeft: 10,
+  text1: {
     fontFamily: 'OpenSans-Regular',
+    fontSize: 16,
+    color: colors.Black,
   },
-  profileImage: {
-    width: wp(10),
-    resizeMode: 'contain',
-    borderRadius: wp(10) / 2,
-    height: hp(5),
+  text2: {
+    fontFamily: 'OpenSans-Bold',
+    fontSize: 14,
+    color: colors.Black,
   },
-  profileText: {
-    color: '#000',
+  middle: {
+    height: '20%',
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderColor: colors.DarkGrey,
+  },
+  text3: {
+    fontFamily: 'OpenSans-Regular',
+    fontSize: 12,
+    color: colors.ExtraDarkGrey,
+  },
+  bottom: {
+    height: '40%',
+    justifyContent: 'space-between',
+  },
+  text4: {
     fontFamily: 'OpenSans-Bold',
     fontSize: 16,
-    marginLeft: wp(3),
+    color: colors.Black,
+    marginLeft: '5%',
   },
-  profileContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    // backgroundColor: 'red',
+  text5: {
+    fontFamily: 'OpenSans-Bold',
+    fontSize: 16,
+    color: colors.Green,
+    marginLeft: '5%',
   },
-  chatContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  chaticon: {
-    width: wp(4),
-    resizeMode: 'contain',
-    marginRight: wp(2),
-  },
-  freelancerDes: {
-    width: wp(70),
+  text6: {
     fontFamily: 'OpenSans-Regular',
-    color: '#000',
-  },
-  textContainer: {
-    width: wp(70),
-    // backgroundColor: 'red',
-    marginLeft: wp(14),
+    fontSize: 16,
+    color: colors.Black,
+    alignSelf: 'center',
   },
 });

@@ -76,7 +76,7 @@ const TrackOrder = ({navigation}) => {
           marginTop: '5%',
           marginHorizontal: '5%',
         }}>
-        <Text style={styles.text1}>Total</Text>
+        <Text style={{...styles.text1, marginBottom: '5%'}}>Total</Text>
 
         <Text style={styles.text1}>£26.4</Text>
       </View>
@@ -84,6 +84,7 @@ const TrackOrder = ({navigation}) => {
       <WhiteButton
         text={'Chat With Service Provider'}
         Icon={require('../../../assets/icons/downArrow.png')}
+        onPress={() => navigation.navigate('Chat')}
       />
 
       {/* Bottom Button */}

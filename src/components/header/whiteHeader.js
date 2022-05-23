@@ -17,6 +17,7 @@ const WhiteHeader = ({
   onPress2,
   text3,
   noRadius,
+  bigFonts,
 }) => {
   return (
     <View style={styles.container}>
@@ -38,7 +39,9 @@ const WhiteHeader = ({
             style={{...styles.profile, borderRadius: noRadius ? 0 : 30 / 2}}
           />
         ) : null}
-        <Text style={styles.text}>{text}</Text>
+        <Text style={{...styles.text, fontSize: bigFonts ? 24 : 16}}>
+          {text}
+        </Text>
       </View>
       {text2 ? (
         <Pressable onPress={onPress2}>
@@ -72,7 +75,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'OpenSans-Bold',
     color: colors.Black,
-    fontSize: 16,
+
     marginLeft: '10%',
   },
   backButton: {

@@ -1,8 +1,9 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Dimensions} from 'react-native';
 import React from 'react';
 import colors from '../../../globalStyles/colors';
+import SmallButton from '../../../components/buttons/smallButton';
 import WhiteHeader from '../../../components/header/whiteHeader';
-import DoubleWhiteButtons from '../../../components/buttons/doubleWhiteButtons';
+import WithdrawCard from '../../../components/cards/withdrawCard';
 
 const Withdraw = ({navigation}) => {
   return (
@@ -11,12 +12,21 @@ const Withdraw = ({navigation}) => {
       <WhiteHeader text={'Withdraw'} onPress={() => navigation.goBack()} />
       {/* Please review details */}
       <Text style={styles.text1}>Please review details</Text>
-      <DoubleWhiteButtons
-        text1={'Current Balance'}
-        text2={'£100'}
-        text3={'Available for withdrawl'}
-        text4={'£80'}
+      <WithdrawCard
+        text1={'Transfer To'}
+        text2={'Bank Account'}
+        text3={'Amount'}
+        text4={'£100'}
       />
+      {/* Withdraw Button */}
+      <View style={{marginTop: '15%'}}>
+        <SmallButton
+          text={'Withdraw'}
+          height={Dimensions.get('window').height / 15}
+          width={'50%'}
+          onPress={() => console.log('Withdraw')}
+        />
+      </View>
     </View>
   );
 };

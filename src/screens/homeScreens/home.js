@@ -52,7 +52,7 @@ const Home = ({navigation}) => {
               />
             </View>
             {/* Available Subscriptions */}
-            <View style={{marginBottom: '5%'}}>
+            <View style={{marginBottom: '5%', marginTop: '2%'}}>
               <Text style={styles.text}>Available Subscriptions</Text>
             </View>
           </View>

@@ -12,7 +12,7 @@ const BookingCard = ({text}) => {
         resizeMode={'contain'}
         style={{
           width: '25%',
-          height: '100%',
+          height: '80%',
           backgroundColor: 100,
           marginRight: '5%',
           borderRadius: 8,
@@ -32,11 +32,13 @@ export default BookingCard;
 const styles = StyleSheet.create({
   container: {
     width: '90%',
-    height: Dimensions.get('window').width / 6,
+    height: Dimensions.get('window').width / 5,
     alignSelf: 'center',
     flexDirection: 'row',
     alignItems: 'flex-start',
     marginVertical: '5%',
+    borderBottomWidth: 1,
+    borderColor: colors.DarkGrey,
   },
   text: {
     fontFamily: 'OpenSans-Regular',

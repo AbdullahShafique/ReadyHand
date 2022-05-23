@@ -1,18 +1,79 @@
-import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
-import React from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  Pressable,
+} from 'react-native';
+import React, {useState} from 'react';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 // import colors from '../../globalStyles/colors';
 import colors from '../../globalStyles/colors';
+import LanguageModal from '../../components/modals/languageModal';
+import ChatModal from '../../components/modals/chatModal';
 
 const GeneralServiceTaker = () => {
+  const [editModal, setEditModal] = useState(false);
+  const [languageModal, setlanguageModal] = useState(false);
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
+        {/* User Information */}
         <View style={styles.mainContainer}>
-          <Text style={styles.lanText}>Languages</Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              marginRight: wp(3),
+            }}>
+            <Text style={styles.lanText}>User Information</Text>
+            <Pressable onPress={() => setEditModal(true)}>
+              <Text style={{...styles.lanText, color: colors.Green}}>Edit</Text>
+            </Pressable>
+          </View>
+          <View style={styles.verticalLine}></View>
+          <View style={styles.languageContainer}>
+            <Image
+              style={styles.ImageStyle}
+              source={require('../../../assets/icons/proposal/user.png')}
+            />
+            <View style={{flexDirection: 'column'}}>
+              <Text style={styles.languageTextStyle}>Username</Text>
+              <Text style={styles.languageType}>Username</Text>
+            </View>
+          </View>
+
+          <View style={styles.languageContainer}>
+            <Image
+              style={styles.ImageStyle}
+              source={require('../../../assets/icons/proposal/pin.png')}
+            />
+            <View style={{flexDirection: 'column', paddingBottom: hp(1.3)}}>
+              <Text style={styles.languageTextStyle}>From</Text>
+              <Text style={styles.languageType}>Exact Location</Text>
+            </View>
+          </View>
+        </View>
+
+        {/* Languages */}
+        <View style={styles.mainContainer}>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              marginRight: wp(3),
+            }}>
+            <Text style={styles.lanText}>Languages</Text>
+            <Pressable onPress={() => setlanguageModal(true)}>
+              <Text style={{...styles.lanText, color: colors.Green}}>Add</Text>
+            </Pressable>
+          </View>
+
           <View style={styles.verticalLine}></View>
           <View style={styles.languageContainer}>
             <Image
@@ -50,7 +111,17 @@ const GeneralServiceTaker = () => {
         </View>
 
         <View style={styles.mainContainer}>
-          <Text style={styles.lanText}>Description</Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              marginRight: wp(3),
+            }}>
+            <Text style={styles.lanText}>Description</Text>
+            <Text style={{...styles.lanText, color: colors.Green}}>Edit</Text>
+          </View>
+
           <View style={styles.verticalLine}></View>
           <Text style={styles.descText}>
             I am Expert of house cleaning. I have been doing thi since 7 years.
@@ -59,7 +130,16 @@ const GeneralServiceTaker = () => {
         </View>
 
         <View style={styles.mainContainer}>
-          <Text style={styles.lanText}>Skills</Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              marginRight: wp(3),
+            }}>
+            <Text style={styles.lanText}>Skills</Text>
+            <Text style={{...styles.lanText, color: colors.Green}}>Edit</Text>
+          </View>
           <View style={styles.verticalLine}></View>
           <View style={{flexDirection: 'row'}}>
             <View style={styles.greyContainer}>
@@ -80,6 +160,13 @@ const GeneralServiceTaker = () => {
           </View>
         </View>
       </ScrollView>
+      {/* ChatModal */}
+      <ChatModal visibility={editModal} onPress={() => setEditModal(false)} />
+      {/* LanguageModal */}
+      <LanguageModal
+        visibility={languageModal}
+        onPress={() => setlanguageModal(false)}
+      />
     </View>
   );
 };

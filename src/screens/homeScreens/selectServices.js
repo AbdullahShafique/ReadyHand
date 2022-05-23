@@ -182,6 +182,7 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans-Regular',
     color: colors.Black,
     fontSize: 14,
+    marginBottom: '2.5%',
   },
   online: {
     width: 9,

@@ -25,6 +25,7 @@ const Filters = ({navigation}) => {
             placeholder={'Location'}
             icon={require('../../../assets/icons/current-location.png')}
             iconSize={20}
+            ShowPassword={true}
           />
         </View>
 

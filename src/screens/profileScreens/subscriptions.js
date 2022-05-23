@@ -1,14 +1,15 @@
-import {StyleSheet, Text, View, Dimensions, FlatList} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  FlatList,
+  Pressable,
+} from 'react-native';
 import React, {useState} from 'react';
 import colors from '../../globalStyles/colors';
 import WhiteHeader from '../../components/header/whiteHeader';
 import SubscriptionCard from '../../components/cards/subscriptionCard';
-
-const ToggleButton = ({text}) => (
-  <View style={styles.toggleButton}>
-    <Text style={styles.toggleButtonText}>{text}</Text>
-  </View>
-);
 
 const Subscriptions = ({navigation}) => {
   // dummy data
@@ -17,6 +18,13 @@ const Subscriptions = ({navigation}) => {
     {key: 2, selected: false},
     {key: 3, selected: false},
     {key: 4, selected: false},
+  ]);
+
+  // Time Zones
+  const [timeZone, setTimeZone] = useState([
+    {title: 'Weekly', selected: false},
+    {title: 'Biweekly', selected: false},
+    {title: 'Monthly', selected: false},
   ]);
   //This function Is toggle the card
   const changeCard = id => {
@@ -27,6 +35,16 @@ const Subscriptions = ({navigation}) => {
     });
 
     setDummyData(temp);
+  };
+  //This function Is toggle the timeZine
+  const changeTimeZine = id => {
+    const temp = [];
+    timeZone.forEach((item, index) => {
+      if (id == index) temp.push({title: item.title, selected: !item.selected});
+      else temp.push({title: item.title, selected: false});
+    });
+
+    setTimeZone(temp);
   };
 
   return (
@@ -40,8 +58,16 @@ const Subscriptions = ({navigation}) => {
       />
       {/* Toggle Button View */}
       <View style={styles.toggleButtonView}>
-        {['Weekly', 'Biweekly', 'Monthly'].map((item, index) => (
-          <ToggleButton key={index} text={item} />
+        {timeZone.map((item, index) => (
+          <Pressable
+            key={index}
+            style={{
+              ...styles.toggleButton,
+              backgroundColor: item.selected ? colors.Green : colors.DarkGrey,
+            }}
+            onPress={() => changeTimeZine(index)}>
+            <Text style={styles.toggleButtonText}>{item.title}</Text>
+          </Pressable>
         ))}
       </View>
 
@@ -67,7 +93,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   toggleButton: {
-    backgroundColor: colors.Green,
     width: '25%',
     height: '100%',
     alignItems: 'center',

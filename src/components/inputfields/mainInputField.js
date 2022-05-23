@@ -32,6 +32,7 @@ const MainInputField = ({
         style={{
           ...styles.inputField,
           height: Dimensions.get('window').height / Height,
+          alignItems: multiline ? null : 'center',
         }}>
         <TextInput
           placeholder={placeholder}
@@ -44,7 +45,7 @@ const MainInputField = ({
           onBlur={onBlur}
           underlineColorAndroid="transparent"
           style={{
-            width: '100%',
+            width: '90%',
             textAlignVertical: multiline ? 'top' : 'center',
           }}
           keyboardType={keyboardType}
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     alignSelf: 'center',
     flexDirection: 'row',
-    //alignItems: 'center',
+
     justifyContent: 'space-between',
   },
 });

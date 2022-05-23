@@ -22,11 +22,13 @@ const ChatModal = ({visibility, onPress}) => {
           {/* Location */}
           <TextInput style={styles.location} placeholder="Location" />
           {/* Add */}
-          <SmallButton
-            text={'Add'}
-            height={Dimensions.get('window').height / 16}
-            width={Dimensions.get('window').width / 3}
-          />
+          <View style={{marginTop: '5%'}}>
+            <SmallButton
+              text={'Add'}
+              height={Dimensions.get('window').height / 16}
+              width={Dimensions.get('window').width / 3}
+            />
+          </View>
         </View>
       </Pressable>
     </Modal>
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignSelf: 'center',
     width: '90%',
-    height: Dimensions.get('window').height / 3,
+    height: Dimensions.get('window').height / 2.5,
     borderRadius: 16,
     justifyContent: 'space-between',
 
@@ -53,6 +55,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontFamily: 'OpenSans-Bold',
     alignSelf: 'center',
+    marginBottom: '5%',
   },
   username: {
     color: colors.Green,
