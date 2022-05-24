@@ -34,5 +34,6 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans-Bold',
     //  color: colors.Green,
     fontSize: 16,
+    textTransform: 'none',
   },
 });

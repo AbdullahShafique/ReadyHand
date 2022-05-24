@@ -26,8 +26,8 @@ const MaterialTopTabNavigation = () => {
         tabBarInactiveTintColor: colors.DarkGrey,
         tabBarIndicatorStyle: {
           backgroundColor: colors.Green,
-          width: '5%',
-          marginLeft: '10%',
+          width: '7%',
+          marginLeft: '9.5%',
         },
         tabBarLabelStyle: styles.text,
       }}>
@@ -44,5 +44,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+  },
+  text: {
+    fontFamily: 'OpenSans-Bold',
+    //  color: colors.Green,
+    fontSize: 16,
+    textTransform: 'none',
   },
 });

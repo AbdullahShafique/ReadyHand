@@ -66,9 +66,21 @@ const Dashboard = ({navigation}) => {
         Icon={require('../../../assets/icons/earning.png')}
       />
       <View style={{marginBottom: '5%'}}>
-        <WhiteButton text={'Active Services'} text4={'05'} />
+        <WhiteButton
+          text={'Active Services'}
+          text4={'05'}
+          onPress={() =>
+            navigation.navigate('Search', {text: 'Active Services'})
+          }
+        />
       </View>
-      <WhiteButton text={'Completed Services'} text4={'05'} />
+      <WhiteButton
+        text={'Completed Services'}
+        text4={'05'}
+        onPress={() =>
+          navigation.navigate('Search', {text: 'Completed Services'})
+        }
+      />
     </View>
   );
 };

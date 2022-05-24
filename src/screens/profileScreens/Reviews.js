@@ -42,6 +42,6 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     backgroundColor: '#fff',
-    // paddingHorizontal: wp(7.5),
+    paddingTop: '2.5%',
   },
 });

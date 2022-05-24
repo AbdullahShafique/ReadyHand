@@ -18,7 +18,9 @@ const Home = ({navigation}) => {
           placeholder={'Search by name or location'}
           icon={require('../../../assets/icons/filter.png')}
           iconSize={18}
-          onSubmitEditing={() => navigation.navigate('Search')}
+          onSubmitEditing={() =>
+            navigation.navigate('Search', {text: 'Clearing'})
+          }
           onPress={() => navigation.navigate('Filters')}
         />
       </View>

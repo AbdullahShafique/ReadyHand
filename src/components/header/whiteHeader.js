@@ -84,8 +84,8 @@ const styles = StyleSheet.create({
     height: 14,
   },
   profile: {
-    height: 30,
-    width: 30,
+    height: 25,
+    width: 25,
 
     marginLeft: '10%',
   },

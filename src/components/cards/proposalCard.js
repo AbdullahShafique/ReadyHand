@@ -7,10 +7,6 @@ import {
   Dimensions,
 } from 'react-native';
 import React from 'react';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
 import colors from '../../globalStyles/colors';
 
 const ProposalCard = ({item, onPress}) => {
@@ -102,19 +98,20 @@ const ProposalCard = ({item, onPress}) => {
             />
             <Text style={styles.text4}>Zeeshan Ali</Text>
           </View>
-          <View
+          <Pressable
             style={{
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'flex-end',
-            }}>
+            }}
+            onPress={onPress}>
             <Image
               source={require('../../../assets/icons/proposal/chat-icon.png')}
               resizeMode={'contain'}
               style={{width: 16, height: 16, borderRadius: 15}}
             />
             <Text style={styles.text5}>Chat</Text>
-          </View>
+          </Pressable>
         </View>
         <View>
           <Text style={styles.text6}>
@@ -131,7 +128,7 @@ export default ProposalCard;
 const styles = StyleSheet.create({
   container: {
     width: Dimensions.get('window').width * 0.9,
-    height: Dimensions.get('window').height / 3,
+    height: Dimensions.get('window').height / 2.7,
     marginTop: '5%',
     backgroundColor: 'white',
     shadowColor: '#000',
@@ -144,7 +141,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     borderRadius: 16,
     justifyContent: 'space-between',
-    padding: '5%',
+    padding: '4%',
   },
   top: {
     flexDirection: 'row',

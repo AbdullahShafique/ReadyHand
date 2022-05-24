@@ -10,6 +10,7 @@ import React from 'react';
 import WhiteHeader from '../../components/header/whiteHeader';
 import MainInputField from '../../components/inputfields/mainInputField';
 import InputFieldWithIcon from '../../components/inputfields/inputFieldWithIcon';
+import SmallButton from '../../components/buttons/smallButton';
 
 const AddServiceRequest = ({navigation}) => {
   return (
@@ -58,6 +59,14 @@ const AddServiceRequest = ({navigation}) => {
           icon={require('../../../assets/icons/downArrow.png')}
           iconSize={14}
         />
+        {/* Create Service Offer */}
+        <View style={{marginTop: '10%', marginBottom: '5%'}}>
+          <SmallButton
+            text={'Create Service Offer'}
+            width={'75%'}
+            height={Dimensions.get('window').height / 15}
+          />
+        </View>
       </ScrollView>
     </View>
   );

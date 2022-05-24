@@ -2,7 +2,7 @@ import {StyleSheet, Text, View, Pressable, Dimensions} from 'react-native';
 import React from 'react';
 import colors from '../../globalStyles/colors';
 
-const SmallButton = ({text, onPress, light, height, width}) => {
+const SmallButton = ({text, onPress, light, height, width, radius}) => {
   return (
     <Pressable
       style={{
@@ -10,6 +10,7 @@ const SmallButton = ({text, onPress, light, height, width}) => {
         backgroundColor: light ? 'white' : colors.Green,
         height: height,
         width: width,
+        borderRadius: radius ? radius : 16,
       }}
       onPress={onPress}>
       <Text style={{...styles.text, color: light ? colors.Green : 'white'}}>
@@ -24,7 +25,7 @@ export default SmallButton;
 const styles = StyleSheet.create({
   container: {
     alignSelf: 'center',
-    borderRadius: 16,
+
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: 10,

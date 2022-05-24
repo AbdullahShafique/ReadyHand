@@ -8,7 +8,7 @@ import MainInputField from '../../components/inputfields/mainInputField';
 import MainButton from '../../components/buttons/mainButton';
 import {AuthContext} from '../../Authentication/authProvider';
 
-const Signup = ({navigation}) => {
+const Signup = ({navigation, route}) => {
   const {signup} = useContext(AuthContext);
   return (
     <KeyboardAwareScrollView style={styles.container}>

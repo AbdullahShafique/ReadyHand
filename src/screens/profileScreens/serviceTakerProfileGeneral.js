@@ -17,7 +17,7 @@ const ServiceTakerProfileGeneral = ({navigation}) => {
       />
       {/* Proposals */}
       <WhiteButtonBold
-        text={'Proposals'}
+        text={' Proposals'}
         Icon={require('../../../assets/icons/Proposals.png')}
         RightArrow={true}
         onPress={() => navigation.navigate('Proposals')}
@@ -33,7 +33,7 @@ const ServiceTakerProfileGeneral = ({navigation}) => {
 
       {/* My Profile */}
       <WhiteButtonBold
-        text={'My Profile'}
+        text={' My Profile'}
         Icon={require('../../../assets/icons/MyProfile.png')}
         RightArrow={true}
         onPress={() => navigation.navigate('MyProfile')}
@@ -41,7 +41,7 @@ const ServiceTakerProfileGeneral = ({navigation}) => {
 
       {/* Settings */}
       <WhiteButtonBold
-        text={'Settings'}
+        text={' Settings'}
         Icon={require('../../../assets/icons/Settings.png')}
         RightArrow={true}
         onPress={() => navigation.navigate('Settings')}
@@ -49,7 +49,7 @@ const ServiceTakerProfileGeneral = ({navigation}) => {
 
       {/* Support */}
       <WhiteButtonBold
-        text={'Support'}
+        text={' Support'}
         Icon={require('../../../assets/icons/Support.png')}
         RightArrow={true}
         onPress={() => navigation.navigate('Support')}
@@ -57,7 +57,7 @@ const ServiceTakerProfileGeneral = ({navigation}) => {
       {/* Logout */}
       <View style={{marginBottom: '10%'}}>
         <WhiteButtonBold
-          text={'Logout'}
+          text={' Logout'}
           Icon={require('../../../assets/icons/Logout.png')}
           RightArrow={true}
           onPress={() => console.log('Logout')}

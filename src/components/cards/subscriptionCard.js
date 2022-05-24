@@ -63,6 +63,7 @@ const SubscriptionCard = ({selected, onPress}) => {
               height={Dimensions.get('window').height / 17}
               width={Dimensions.get('window').width / 3.5}
               onPress={() => console.log('Pause')}
+              radius={8}
             />
 
             <SmallButton
@@ -70,6 +71,7 @@ const SubscriptionCard = ({selected, onPress}) => {
               height={Dimensions.get('window').height / 17}
               width={Dimensions.get('window').width / 3.5}
               onPress={() => console.log('Cancel')}
+              radius={8}
             />
           </View>
         </View>

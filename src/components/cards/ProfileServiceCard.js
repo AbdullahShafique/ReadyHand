@@ -1,139 +1,163 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
-import React from 'react';
 import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  Pressable,
+} from 'react-native';
+import React from 'react';
+
 import colors from '../../globalStyles/colors';
-const ProfileServiceCard = ({item}) => {
+import SmallButton from '../buttons/smallButton';
+const ProfileServiceCard = ({item, onPress}) => {
   return (
-    <View style={styles.mainContainer}>
-      <View style={styles.optionPosition}>
+    <View style={styles.container}>
+      <View style={styles.top}>
         <Image
-          style={{width: wp(0.7), resizeMode: 'contain'}}
-          source={require('../../../assets/icons/proposal/option.png')}
+          source={require('../../../assets/images/p1.png')}
+          resizeMode={'contain'}
+          style={{
+            width: Dimensions.get('window').width * 0.2,
+            height: Dimensions.get('window').width * 0.18,
+            borderRadius: 8,
+          }}
         />
-      </View>
-      <View style={styles.containerOne}>
-        <Image
-          style={styles.image1}
-          resizeMode="contain"
-          source={require('../../../assets/icons/proposal/display-image.png')}
-        />
-        <View style={{marginLeft: wp(3)}}>
-          <Text style={styles.text1}>
-            I need a professional for house cleaning.
+        <View
+          style={{
+            width: '60%',
+            height: Dimensions.get('window').width * 0.18,
+            justifyContent: 'space-between',
+          }}>
+          <Text numberOfLines={2} style={styles.text1}>
+            I need a professional for house cleaning. I need a professional for
+            house cleaning.
           </Text>
-          <View style={styles.locationConatainer}>
+          <View style={{flexDirection: 'row'}}>
             <Image
-              resizeMode="contain"
-              style={{width: wp(6)}}
               source={require('../../../assets/icons/proposal/location.png')}
+              resizeMode={'contain'}
+              style={{
+                width: 20,
+                height: 20,
+
+                marginRight: '5%',
+              }}
             />
-            <Text style={styles.locationText}>{item.addres}</Text>
+            <Text style={styles.text2} numberOfLines={1}>
+              197 Cedar Street London
+            </Text>
           </View>
         </View>
+        <Image
+          source={require('../../../assets/icons/proposal/option.png')}
+          resizeMode={'contain'}
+          style={{
+            width: '5%',
+            height: '20%',
+          }}
+        />
       </View>
-      <View style={styles.verticalLine}></View>
-      <View style={styles.iconMainContainer}>
-        <View style={styles.iconContainer}>
+      {/* Middle */}
+      <View style={styles.middle}>
+        {/* Rate */}
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <Image
-            style={styles.icon}
-            source={require('../../../assets/icons/proposal/money-card.png')}
+            source={require('../../../assets/icons/rate.png')}
+            resizeMode={'contain'}
+            style={{width: 14, height: 14, marginRight: 15}}
           />
-          <Text style={styles.iconText}>£ 8.00/Hr</Text>
+          <Text style={styles.text3}>£ 10.00/Hr</Text>
         </View>
-        <View style={styles.iconContainer}>
+        {/* Language */}
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <Image
-            style={styles.icon}
             source={require('../../../assets/icons/proposal/langauge.png')}
+            resizeMode={'contain'}
+            style={{width: 14, height: 14, marginRight: 15}}
           />
-          <Text style={styles.iconText}>Spanish</Text>
+          <Text style={styles.text3}>Spanish</Text>
         </View>
       </View>
+      {/* Send Proposal */}
+      <SmallButton
+        text={'Send Proposal'}
+        height={'20%'}
+        width={'50%'}
+        radius={8}
+      />
     </View>
   );
 };
 export default ProfileServiceCard;
 const styles = StyleSheet.create({
-  mainContainer: {
-    width: wp(90),
-    // height: hp(38),
-    backgroundColor: '#fff',
-    borderRadius: wp(85) / 20,
+  container: {
+    width: Dimensions.get('window').width * 0.9,
+    height: Dimensions.get('window').height / 3.5,
+    marginTop: '5%',
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
     elevation: 5,
-    flexDirection: 'column',
-    alignItems: 'center',
-    // margin: 10,
-    alignSelf: 'center',
-    marginVertical: hp(1.3),
+    borderRadius: 16,
+    justifyContent: 'space-between',
+    paddingHorizontal: '4%',
+    paddingTop: '4%',
   },
-  optionPosition: {position: 'absolute', right: wp(4), top: hp(-1.5)},
-  containerOne: {
-    marginVertical: hp(2),
+  top: {
     flexDirection: 'row',
-    // backgroundColor: 'red',
-    width: wp(78),
-    height: hp(10),
-    alignItems: 'center',
-  },
-  image1: {
-    width: wp(18),
+    justifyContent: 'space-between',
   },
   text1: {
-    color: '#000',
-    width: wp(56),
-    // fontWeight: '400',
+    fontFamily: 'OpenSans-Regular',
     fontSize: 16,
-    fontFamily: 'OpenSans-Regular',
+    color: colors.Black,
   },
-  locationConatainer: {
-    flexDirection: 'row',
-    // backgroundColor: 'red',
-    height: hp(5),
-    alignItems: 'center',
-    // justifyContent: 'center',
-  },
-  locationText: {
-    color: '#000',
-    // fontWeight: '700',
-    marginLeft: wp(1.5),
-    paddingTop: hp(1.3),
+  text2: {
     fontFamily: 'OpenSans-Bold',
+    fontSize: 14,
+    color: colors.Black,
   },
-  verticalLine: {
-    width: wp(80),
-    borderWidth: 1,
-    // color: colors.Grey,
-    borderColor: colors.Grey,
-  },
-  iconMainContainer: {
-    paddingVertical: hp(1.6),
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
+  middle: {
+    height: '20%',
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
     alignItems: 'center',
-    width: wp(80),
-    paddingBottom: 20,
-    // backgroundColor: 'blue',
-  },
-  iconContainer: {
     flexDirection: 'row',
-    // justifyContent: 'space-between',
-    alignItems: 'center',
-    // backgroundColor: 'red',
-    height: hp(2.2),
-    width: wp(25),
+    justifyContent: 'space-between',
+    borderColor: colors.DarkGrey,
+    paddingHorizontal: '20%',
   },
-  icon: {
-    width: wp(4.4),
-    resizeMode: 'contain',
-  },
-  iconText: {
-    color: colors.DarkGrey,
-    marginLeft: 10,
+  text3: {
     fontFamily: 'OpenSans-Regular',
-
-    width: '80%',
-    height: '100%',
+    fontSize: 12,
+    color: colors.ExtraDarkGrey,
+  },
+  bottom: {
+    height: '40%',
+    justifyContent: 'space-between',
+  },
+  text4: {
+    fontFamily: 'OpenSans-Bold',
+    fontSize: 16,
+    color: colors.Black,
+    marginLeft: '5%',
+  },
+  text5: {
+    fontFamily: 'OpenSans-Bold',
+    fontSize: 16,
+    color: colors.Green,
+    marginLeft: '5%',
+  },
+  text6: {
+    fontFamily: 'OpenSans-Regular',
+    fontSize: 16,
+    color: colors.Black,
+    alignSelf: 'center',
   },
 });

@@ -177,6 +177,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingTop: '2.5%',
   },
   mainContainer: {
     width: wp(85),
@@ -185,7 +186,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     // height: hp(10),
     borderRadius: wp(85) / 25,
-    marginVertical: hp(2.6),
+    marginVertical: hp(1),
   },
   lanText: {
     color: colors.Black,

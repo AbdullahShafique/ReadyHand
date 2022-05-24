@@ -3,12 +3,15 @@ import React from 'react';
 import WhiteHeader from '../../components/header/whiteHeader';
 import ServiceDetail from '../../components/cards/serviceDetail';
 
-const Search = ({navigation}) => {
+const Search = ({navigation, route}) => {
   return (
     <View style={styles.container}>
       {/* Header */}
 
-      <WhiteHeader onPress={() => navigation.goBack()} text={'Clearing'} />
+      <WhiteHeader
+        onPress={() => navigation.goBack()}
+        text={route.params.text}
+      />
       <View style={{marginTop: '5%'}} />
 
       {/* Flatlist */}

@@ -18,7 +18,7 @@ const data = [
 ];
 const Service = () => {
   return (
-    <View style={{flex: 1, backgroundColor: 'white'}}>
+    <View style={{flex: 1, backgroundColor: 'white', paddingTop: '2.5%'}}>
       <FlatList
         showsVerticalScrollIndicator={false}
         data={data}

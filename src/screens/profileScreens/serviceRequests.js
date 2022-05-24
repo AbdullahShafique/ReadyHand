@@ -8,7 +8,7 @@ const ServiceRequests = ({navigation}) => {
     <View style={styles.container}>
       {/* Header */}
       <WhiteHeader
-        text={'Requested Services'}
+        text={'Service Requests'}
         onPress={() => navigation.goBack()}
         text2={'Add New'}
         onPress2={() => navigation.navigate('AddServiceRequest')}
@@ -29,5 +29,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+    alignItems: 'center',
   },
 });

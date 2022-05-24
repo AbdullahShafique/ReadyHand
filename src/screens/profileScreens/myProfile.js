@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     marginVertical: hp(1),
   },
   verticalLine: {
-    width: wp(90),
+    width: wp(88),
     borderWidth: 1,
     // color: colors.Grey,
     borderColor: colors.Grey,
