@@ -6,12 +6,17 @@ import HomeHeader from '../../components/header/homeHeader';
 import InputFieldWithIcon from '../../components/inputfields/inputFieldWithIcon';
 import ServiceDetail from '../../components/cards/serviceDetail';
 import ServiceDetailHorizontal from '../../components/cards/serviceDetailHorizontal';
+import ProfileServiceCard2 from '../../components/cards/ProfileServiceCard2';
 
 const Home = ({navigation}) => {
   return (
     <View style={styles.container}>
       {/* Header */}
-      <HomeHeader onPress={() => navigation.navigate('Dashboard')} />
+      <HomeHeader
+        Dashboard={false}
+        onPress={() => navigation.navigate('Dashboard')}
+        typeOfUser={'Service Taker'}
+      />
       {/* Search Bar */}
       <View style={{marginBottom: '5%'}}>
         <InputFieldWithIcon
@@ -31,7 +36,7 @@ const Home = ({navigation}) => {
           <View>
             {/* Explore */}
 
-            <Text style={styles.text}>Explore</Text>
+            <Text style={styles.text}>Available Subscriptions</Text>
 
             <View
               style={{
@@ -46,7 +51,19 @@ const Home = ({navigation}) => {
                   // <ServiceDetail
                   //   onPress={() => navigation.navigate('SelectServices')}
                   // />
-                  <ServiceDetailHorizontal />
+                  // <ServiceDetailHorizontal />
+                  <View
+                    style={{
+                      marginRight: 20,
+                      justifyContent: 'center',
+                    }}>
+                    <ProfileServiceCard2
+                      item={{
+                        name: 'Zesshan Ali',
+                        addres: '197 Cadar Street London',
+                      }}
+                    />
+                  </View>
                 )}
                 // <ServiceDetail />
                 keyExtractor={item => item}
@@ -55,7 +72,7 @@ const Home = ({navigation}) => {
             </View>
             {/* Available Subscriptions */}
             <View style={{marginBottom: '5%', marginTop: '2%'}}>
-              <Text style={styles.text}>Available Subscriptions</Text>
+              <Text style={styles.text}>Explore</Text>
             </View>
           </View>
         }

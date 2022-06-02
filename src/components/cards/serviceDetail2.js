@@ -1,17 +1,24 @@
-import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  Pressable,
+} from 'react-native';
 import React from 'react';
 import colors from '../../globalStyles/colors';
 
-const ServiceDetail = () => {
+const ServiceDetail = ({onPress}) => {
   return (
-    <View style={styles.card}>
+    <Pressable style={styles.card} onPress={onPress}>
       <Image
-        source={require('../../../assets/images/p2.png')}
+        source={require('../../../assets/images/p4.png')}
         resizeMode={'contain'}
         style={{
-          width: '35%',
-          height: '80%',
-          borderRadius: 10,
+          width: Dimensions.get('window').width * 0.2,
+          height: Dimensions.get('window').width * 0.2,
+          borderRadius: 50,
         }}
       />
       {/* vertical Line */}
@@ -22,40 +29,30 @@ const ServiceDetail = () => {
           backgroundColor: colors.DarkGrey,
         }}></View>
       {/*Text Area  */}
-      <View style={{width: '60%', height: '80%'}}>
-        {/* ratting and rate */}
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
-            <Image
-              source={require('../../../assets/icons/star.png')}
-              resizeMode={'contain'}
-              style={{width: 12, height: 12, marginRight: '5%'}}
-            />
-            <Text style={styles.text1}>4.8</Text>
-            <Text style={styles.text2}>{`(72)`}</Text>
-          </View>
+      <View
+        style={{
+          width: '60%',
+          height: '80%',
 
-          <Text style={styles.text3}>$50/Hr</Text>
+          justifyContent: 'center',
+        }}>
+        {/* title and rate */}
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}>
+          {/* Title of Services */}
+          <Text style={styles.text4}>Title of Services</Text>
+          <Text style={styles.text3}>£8.00/Hr</Text>
         </View>
-        {/* Name */}
-        <Text style={styles.text4}>Name</Text>
+
         {/* Description */}
         <Text numberOfLines={2} ellipsizeMode="tail" style={styles.text5}>
           Description of the service provided by the service provider
         </Text>
-        {/* Location */}
-        <View style={{flexDirection: 'row'}}>
-          <Image
-            source={require('../../../assets/icons/location.png')}
-            resizeMode={'contain'}
-            style={{width: 13, height: 13, marginRight: '5%', marginTop: '1%'}}
-          />
-          <Text numberOfLines={2} ellipsizeMode="tail" style={styles.text6}>
-            80611, Houston Street, United Kingdom
-          </Text>
-        </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
@@ -63,8 +60,8 @@ export default ServiceDetail;
 
 const styles = StyleSheet.create({
   card: {
-    width: '85%',
-    height: Dimensions.get('window').height / 5.2,
+    width: '90%',
+    height: Dimensions.get('window').height / 6,
     borderRadius: 17,
     backgroundColor: 'white',
     shadowColor: '#000',
@@ -75,11 +72,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    //  marginLeft: '7.5%',
+    marginLeft: '5%',
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
     paddingHorizontal: '5%',
+    marginBottom: '5%',
   },
   text1: {
     fontFamily: 'OpenSans-Bold',

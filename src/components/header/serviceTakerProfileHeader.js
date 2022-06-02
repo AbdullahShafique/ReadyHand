@@ -11,7 +11,13 @@ import React from 'react';
 import colors from '../../globalStyles/colors';
 const ScreenHeight = Dimensions.get('screen').height;
 const ScreenWidth = Dimensions.get('screen').width;
-const ServiceTakerProfileHeader = ({text, onPress, Icon, Usename}) => {
+const ServiceTakerProfileHeader = ({
+  text,
+  onPress,
+  Icon,
+  Usename,
+  serviceProvider,
+}) => {
   return (
     <View style={styles.container}>
       {/*Profile Image  */}
@@ -57,6 +63,9 @@ const ServiceTakerProfileHeader = ({text, onPress, Icon, Usename}) => {
         </Pressable>
 
         <Text style={styles.text}>{text}</Text>
+        {serviceProvider ? (
+          <Text style={styles.text3}>{`   (Service Provider)`}</Text>
+        ) : null}
       </View>
 
       <Image
@@ -113,5 +122,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     position: 'absolute',
     bottom: '-30%',
+  },
+  text3: {
+    fontFamily: 'OpenSans-Regular',
+    color: 'white',
+    fontSize: 12,
   },
 });

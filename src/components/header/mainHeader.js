@@ -10,7 +10,7 @@ import React from 'react';
 import colors from '../../globalStyles/colors';
 const ScreenHeight = Dimensions.get('screen').height;
 const ScreenWidth = Dimensions.get('screen').width;
-const MainHeader = ({text, onPress}) => {
+const MainHeader = ({text, onPress, serviceTaker}) => {
   return (
     <Pressable style={styles.container} onPress={onPress}>
       <Image
@@ -19,6 +19,9 @@ const MainHeader = ({text, onPress}) => {
         style={{width: '4%', marginHorizontal: '5%'}}
       />
       <Text style={styles.text}>{text}</Text>
+      {serviceTaker ? (
+        <Text style={styles.text2}>{`   (Service Taker)`}</Text>
+      ) : null}
       <Image
         source={require('../../../assets/icons/Ellipse.png')}
         resizeMode={'contain'}
@@ -69,5 +72,10 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 24,
     marginLeft: '5%',
+  },
+  text2: {
+    fontFamily: 'OpenSans-Regular',
+    color: 'white',
+    fontSize: 12,
   },
 });

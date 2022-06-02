@@ -1,24 +1,30 @@
 import {StyleSheet, Text, View, Image, Pressable} from 'react-native';
 import React from 'react';
 import colors from '../../globalStyles/colors';
-const HomeHeader = ({onPress}) => {
+const HomeHeader = ({onPress, Dashboard, typeOfUser}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hi, Username</Text>
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <Text style={styles.text}>Hi, Username</Text>
+        <Text style={styles.text2}>{`   (${typeOfUser})`}</Text>
+      </View>
+
       {/* Profile Image */}
-      <Pressable onPress={onPress}>
-        <Image
-          source={require('../../../assets/images/user_profile.jpg')}
-          resizeMode={'contain'}
-          style={{
-            width: 35,
-            height: 35,
-            alignSelf: 'center',
-            borderRadius: 120 / 2,
-            backgroundColor: 100,
-          }}
-        />
-      </Pressable>
+      {Dashboard ? (
+        <Pressable onPress={onPress}>
+          <Image
+            source={require('../../../assets/images/user_profile.jpg')}
+            resizeMode={'contain'}
+            style={{
+              width: 35,
+              height: 35,
+              alignSelf: 'center',
+              borderRadius: 120 / 2,
+              backgroundColor: 100,
+            }}
+          />
+        </Pressable>
+      ) : null}
     </View>
   );
 };
@@ -39,5 +45,10 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans-Bold',
     color: colors.Black,
     fontSize: 24,
+  },
+  text2: {
+    fontFamily: 'OpenSans-Regular',
+    color: colors.DarkGrey,
+    fontSize: 12,
   },
 });

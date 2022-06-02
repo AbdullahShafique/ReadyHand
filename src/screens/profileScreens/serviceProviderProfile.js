@@ -14,6 +14,7 @@ const ServiceProviderProfile = ({navigation}) => {
         Icon={require('../../../assets/images/user_profile.jpg')}
         onPress={() => navigation.goBack()}
         Usename={'Usename'}
+        serviceProvider={true}
       />
       <ScrollView
         style={{flex: 1, marginTop: '2.5%'}}

@@ -10,6 +10,7 @@ import React, {useState} from 'react';
 import colors from '../../globalStyles/colors';
 import WhiteHeader from '../../components/header/whiteHeader';
 import SubscriptionCard from '../../components/cards/subscriptionCard';
+import ProfileServiceCard2 from '../../components/cards/ProfileServiceCard2';
 
 const Subscriptions = ({navigation}) => {
   // dummy data
@@ -51,9 +52,9 @@ const Subscriptions = ({navigation}) => {
     <View style={styles.container}>
       {/* Header */}
       <WhiteHeader
-        text={'Create Subscription'}
+        text={'Subscription'}
         onPress={() => navigation.goBack()}
-        text2={'Create New'}
+        // text2={'Create New'}
         onPress2={() => navigation.navigate('CreateSubscription')}
       />
       {/* Toggle Button View */}
@@ -74,11 +75,18 @@ const Subscriptions = ({navigation}) => {
       <FlatList
         data={dummyData}
         keyExtractor={item => item.key}
+        showsVerticalScrollIndicator={false}
         renderItem={({item, index}) => (
-          <SubscriptionCard
-            selected={item.selected}
-            onPress={() => changeCard(index)}
+          <ProfileServiceCard2
+            item={{
+              name: 'Zesshan Ali',
+              addres: '197 Cadar Street London',
+            }}
           />
+          // <SubscriptionCard
+          //   selected={item.selected}
+          //   onPress={() => changeCard(index)}
+          // />
         )}
       />
     </View>

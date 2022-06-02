@@ -14,7 +14,11 @@ const ServiceTakerProfile = ({navigation}) => {
   return (
     <View style={styles.container}>
       {/* Header */}
-      <MainHeader text={'Profile'} onPress={() => navigation.goBack()} />
+      <MainHeader
+        text={'Profile'}
+        serviceTaker={true}
+        onPress={() => navigation.goBack()}
+      />
       {/*Profile Image  */}
       <ImageBackground
         source={require('../../../assets/images/user_profile.jpg')}

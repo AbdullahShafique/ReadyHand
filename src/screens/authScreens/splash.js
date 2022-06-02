@@ -1,6 +1,7 @@
 import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
 import React from 'react';
 import colors from '../../globalStyles/colors';
+
 const Splash = () => {
   return (
     <View style={styles.container}>
