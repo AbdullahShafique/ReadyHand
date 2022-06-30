@@ -33,7 +33,7 @@ const ServiceTakerProfileGeneral = ({navigation}) => {
 
       {/* My Profile */}
       <WhiteButtonBold
-        text={' My Profile'}
+        text={'My Profile'}
         Icon={require('../../../assets/icons/MyProfile.png')}
         RightArrow={true}
         onPress={() => navigation.navigate('MyProfile')}
@@ -41,7 +41,7 @@ const ServiceTakerProfileGeneral = ({navigation}) => {
 
       {/* Settings */}
       <WhiteButtonBold
-        text={' Settings'}
+        text={'Settings'}
         Icon={require('../../../assets/icons/Settings.png')}
         RightArrow={true}
         onPress={() => navigation.navigate('Settings')}

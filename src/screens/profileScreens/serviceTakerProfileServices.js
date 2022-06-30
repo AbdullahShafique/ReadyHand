@@ -9,8 +9,9 @@ const ServiceTakerProfileServices = ({navigation}) => {
         data={[1, 2, 3, 4, 5]}
         keyExtractor={item => item}
         showsVerticalScrollIndicator={false}
-        renderItem={() => (
+        renderItem={({item, index}) => (
           <ProfileServiceCard2
+            isExpired={!index && true}
             item={{name: 'Zesshan Ali', addres: '197 Cadar Street London'}}
           />
         )}

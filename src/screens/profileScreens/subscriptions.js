@@ -78,6 +78,7 @@ const Subscriptions = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         renderItem={({item, index}) => (
           <ProfileServiceCard2
+            onPress={() => navigation.navigate('SelectServices')}
             item={{
               name: 'Zesshan Ali',
               addres: '197 Cadar Street London',

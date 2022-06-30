@@ -23,6 +23,7 @@ import Email from '../screens/profileScreens/settings/email';
 import Password from '../screens/profileScreens/settings/password';
 import Withdraw from '../screens/profileScreens/settings/withdraw';
 import Chat from '../screens/messagesScreens/chat';
+import NewService from '../screens/profileScreens/newService';
 
 import {AuthContext} from '../Authentication/authProvider';
 
@@ -66,6 +67,7 @@ const ProfileNavigator = ({navigation}) => {
       <Stack.Screen name="Password" component={Password} />
       <Stack.Screen name="Withdraw" component={Withdraw} />
       <Stack.Screen name="Chat" component={Chat} />
+      <Stack.Screen name="NewService" component={NewService} />
 
       <Stack.Screen
         name="MaterialTopTabHeader"

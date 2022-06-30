@@ -48,7 +48,11 @@ const WhiteButtonBold = ({
         <Image
           source={require('../../../assets/icons/rightArrow.png')}
           resizeMode={'contain'}
-          style={{width: '5%', height: '30%', tintColor: colors.ExtraDarkGrey}}
+          style={{
+            width: '5%',
+            height: '30%',
+            tintColor: colors.ExtraDarkGrey,
+          }}
         />
       ) : null}
     </Pressable>
@@ -86,6 +90,6 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height / 25,
     width: Dimensions.get('window').width / 25,
     tintColor: colors.ExtraDarkGrey,
-    marginRight: '15%',
+    marginRight: 25,
   },
 });

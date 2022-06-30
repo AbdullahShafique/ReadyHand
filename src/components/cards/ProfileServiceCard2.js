@@ -1,13 +1,13 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, Pressable} from 'react-native';
 import React from 'react';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import colors from '../../globalStyles/colors';
-const ProfileServiceCard2 = ({item}) => {
+const ProfileServiceCard2 = ({item, onPress, isExpired}) => {
   return (
-    <View style={styles.mainContainer}>
+    <Pressable onPress={onPress} style={styles.mainContainer}>
       <View style={styles.optionPosition}>
         <Image
           style={{width: wp(0.7), resizeMode: 'contain'}}
@@ -21,6 +21,7 @@ const ProfileServiceCard2 = ({item}) => {
           source={require('../../../assets/icons/proposal/display-image.png')}
         />
         <View style={{marginLeft: wp(3)}}>
+          {isExpired ? <Text style={styles.expiredText}>Expired</Text> : null}
           <Text style={styles.text1}>
             I need a professional for house cleaning.
           </Text>
@@ -58,7 +59,7 @@ const ProfileServiceCard2 = ({item}) => {
           <Text style={styles.iconText}>Spanish</Text>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 export default ProfileServiceCard2;
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
     color: '#000',
     // fontWeight: '700',
     marginLeft: wp(1.5),
-    paddingTop: hp(1.3),
+    paddingTop: hp(0.5),
     fontFamily: 'OpenSans-Bold',
   },
   verticalLine: {
@@ -138,5 +139,11 @@ const styles = StyleSheet.create({
     color: colors.DarkGrey,
     marginLeft: 10,
     fontFamily: 'OpenSans-Regular',
+  },
+  expiredText: {
+    color: 'crimson',
+    marginTop: '5%',
+    fontFamily: 'OpenSans-Bold',
+    fontSize: 12,
   },
 });

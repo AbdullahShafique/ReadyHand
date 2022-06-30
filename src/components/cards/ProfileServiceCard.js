@@ -80,6 +80,7 @@ const ProfileServiceCard = ({item, onPress}) => {
         </View>
       </View>
       {/* Send Proposal */}
+
       <SmallButton
         text={'Send Proposal'}
         height={'20%'}
@@ -108,6 +109,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: '4%',
     paddingTop: '4%',
+    paddingBottom: '2%',
+    alignSelf: 'center',
   },
   top: {
     flexDirection: 'row',
@@ -131,7 +134,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     borderColor: colors.DarkGrey,
-    paddingHorizontal: '20%',
+    paddingHorizontal: '15%',
   },
   text3: {
     fontFamily: 'OpenSans-Regular',
