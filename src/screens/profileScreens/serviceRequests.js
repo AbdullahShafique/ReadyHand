@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import WhiteHeader from '../../components/header/whiteHeader';
-import ProfileServiceCard from '../../components/cards/ProfileServiceCard';
+import ProfileServiceCard2 from '../../components/cards/ProfileServiceCard2';
 
 const ServiceRequests = ({navigation}) => {
   return (
@@ -10,11 +10,11 @@ const ServiceRequests = ({navigation}) => {
       <WhiteHeader
         text={'Service Requests'}
         onPress={() => navigation.goBack()}
-        text2={'Add New'}
-        onPress2={() => navigation.navigate('AddServiceRequest')}
+        // text2={'Add New'}
+        // onPress2={() => navigation.navigate('AddServiceRequest')}
       />
       {[1, 2, 3].map((item, index) => (
-        <ProfileServiceCard
+        <ProfileServiceCard2
           key={index}
           item={{name: 'Zesshan Ali', addres: '197 Cadar Street London'}}
         />

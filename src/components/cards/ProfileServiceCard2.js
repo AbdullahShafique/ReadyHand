@@ -15,11 +15,11 @@ const ProfileServiceCard2 = ({item, onPress, isExpired}) => {
         />
       </View>
       <View style={styles.containerOne}>
-        <Image
+        {/* <Image
           style={styles.image1}
           resizeMode="contain"
           source={require('../../../assets/icons/proposal/display-image.png')}
-        />
+        /> */}
         <View style={{marginLeft: wp(3)}}>
           {isExpired ? <Text style={styles.expiredText}>Expired</Text> : null}
           <Text style={styles.text1}>
@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
   containerOne: {
     marginVertical: hp(2),
     flexDirection: 'row',
-    // backgroundColor: 'red',
     width: wp(78),
     height: hp(10),
     alignItems: 'center',
@@ -90,7 +89,7 @@ const styles = StyleSheet.create({
   },
   text1: {
     color: '#000',
-    width: wp(56),
+    width: wp(70),
     fontSize: 16,
     fontFamily: 'OpenSans-Regular',
   },

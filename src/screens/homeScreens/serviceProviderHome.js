@@ -17,6 +17,7 @@ import ColorfullButtons from '../../components/buttons/colorfullButtons';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import TodoCard from '../../components/cards/todoCard';
 import AddTodoModal from '../../components/modals/addTodoModal';
+import OfferBestServicesCard from '../../components/cards/offerBestServicesCard';
 
 const ServiceProviderHome = ({navigation}) => {
   const [todoModal, setTodoModal] = useState(false);
@@ -56,11 +57,11 @@ const ServiceProviderHome = ({navigation}) => {
             text2={'Withdraw'}
             backgroundColor={'#F69762'}
           />
-          <ColorfullButtons
+          {/* <ColorfullButtons
             text1={'250'}
             text2={'Name'}
             backgroundColor={'#1E8B85'}
-          />
+          /> */}
         </View>
         {/* Active Services/jobs */}
         <View
@@ -82,6 +83,10 @@ const ServiceProviderHome = ({navigation}) => {
             onPress={() => navigation.navigate('SelectServices')}
           />
         ))}
+        {/* Offer Best Services */}
+        <OfferBestServicesCard
+          onPress={() => navigation.navigate('AddServiceRequest')}
+        />
         {/* ToDo  */}
         <View
           style={{

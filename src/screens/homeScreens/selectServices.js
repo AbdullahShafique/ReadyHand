@@ -8,15 +8,19 @@ import {
   Pressable,
   FlatList,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import WhiteHeader from '../../components/header/whiteHeader';
 import colors from '../../globalStyles/colors';
 import WhiteButton from '../../components/buttons/whiteButton';
 import SmallButton from '../../components/buttons/smallButton';
 import ReviewCard from '../../components/cards/reviewCard';
 import ProfileModal from '../../components/modals/profileModal';
+import WhiteDropdownButton from '../../components/buttons/whiteDropdownButton';
+import {AuthContext} from '../../Authentication/authProvider';
 const SelectServices = ({navigation}) => {
   const [profileModalVisible, setProfileModalVisible] = useState(false);
+  const [subAvailableDropdown, setsubAvailableDropdown] = useState(false);
+  const {userType} = useContext(AuthContext); //serviceProvider  ProfileSetup
   return (
     <View style={styles.container}>
       <WhiteHeader onPress={() => navigation.goBack()} />
@@ -80,6 +84,19 @@ const SelectServices = ({navigation}) => {
             </View>
             {/* Hourly Rate */}
             <WhiteButton text={'Hourly Rate'} text2={'£ 8.0/Hr'} />
+            {/* Subscription Available */}
+            {userType == 'serviceTaker' ? (
+              <View style={{marginTop: '5%'}}>
+                <WhiteDropdownButton
+                  text={'Subscription Available'}
+                  Icon={require('../../../assets/icons/downArrow.png')}
+                  open={subAvailableDropdown}
+                  onPress={() => setsubAvailableDropdown(prev => !prev)}
+                  onPress2={() => console.log('Subscribe')}
+                />
+              </View>
+            ) : null}
+
             {/* Profile */}
             <Pressable onPress={() => setProfileModalVisible(true)}>
               <View

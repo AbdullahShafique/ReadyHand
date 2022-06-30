@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View, FlatList} from 'react-native';
 import React from 'react';
-import ProfileServiceCard2 from '../../components/cards/ProfileServiceCard2';
+import ProfileServiceCard from '../../components/cards/ProfileServiceCard';
 
 const ServiceTakerProfileServices = ({navigation}) => {
   return (
@@ -10,7 +10,7 @@ const ServiceTakerProfileServices = ({navigation}) => {
         keyExtractor={item => item}
         showsVerticalScrollIndicator={false}
         renderItem={({item, index}) => (
-          <ProfileServiceCard2
+          <ProfileServiceCard
             isExpired={!index && true}
             item={{name: 'Zesshan Ali', addres: '197 Cadar Street London'}}
           />

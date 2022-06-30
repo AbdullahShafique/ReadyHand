@@ -18,7 +18,7 @@ const AddServiceRequest = ({navigation}) => {
       {/* Header */}
       <WhiteHeader
         text={'Add Service Request'}
-        onPress={() => navigation.goBack()}
+        onPress={() => navigation.navigate('Home')}
         style={{}}
       />
       <ScrollView showsVerticalScrollIndicator={false}>

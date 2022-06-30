@@ -98,7 +98,7 @@ export default ServiceTakerProfileHeader;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.Green,
+    backgroundColor: '#434343',
     height: ScreenHeight / 4.5,
     flexDirection: 'row',
     marginBottom: Dimensions.get('window').height / 9,

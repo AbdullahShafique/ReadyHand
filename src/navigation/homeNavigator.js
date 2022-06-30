@@ -12,6 +12,7 @@ import Dashboard from '../screens/homeScreens/dashboard';
 import Chat from '../screens/messagesScreens/chat';
 import ServiceProviderHome from '../screens/homeScreens/serviceProviderHome';
 import {AuthContext} from '../Authentication/authProvider';
+import AddServiceRequest from '../screens/profileScreens/addServiceRequest';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +34,7 @@ const HomeNavigator = () => {
       <Stack.Screen name="DisputeOrHelp" component={DisputeOrHelp} />
       <Stack.Screen name="Dashboard" component={Dashboard} />
       <Stack.Screen name="Chat" component={Chat} />
+      <Stack.Screen name="AddServiceRequest" component={AddServiceRequest} />
       {/* <Stack.Screen
         name="ServiceProviderHome"
         component={ServiceProviderHome}
