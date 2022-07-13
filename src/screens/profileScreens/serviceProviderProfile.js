@@ -36,7 +36,7 @@ const ServiceProviderProfile = ({navigation}) => {
         />
         {/* Service Requests */}
         <WhiteButtonBold
-          text={'Service Requests'}
+          text={'Services Requests'}
           Icon={require('../../../assets/icons/Proposals.png')}
           RightArrow={true}
           onPress={() => navigation.navigate('ServiceRequests')}

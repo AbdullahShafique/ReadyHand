@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   optionPosition: {position: 'absolute', right: wp(4), top: hp(-1.5)},
   containerOne: {
-    marginVertical: hp(2),
+    marginVertical: hp(1.5),
     flexDirection: 'row',
     width: wp(78),
     height: hp(10),
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   iconMainContainer: {
     paddingVertical: hp(1.6),
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
     width: wp(80),
     paddingBottom: 20,

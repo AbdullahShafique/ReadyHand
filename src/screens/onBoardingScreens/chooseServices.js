@@ -7,7 +7,7 @@ import {AuthContext} from '../../Authentication/authProvider';
 import MainButton from '../../components/buttons/mainButton';
 
 const ChooseServices = ({navigation}) => {
-  const {userType, setOnBoardingDone} = useContext(AuthContext);
+  const {userType} = useContext(AuthContext);
 
   const [services, setServices] = useState([
     {
@@ -120,7 +120,7 @@ const ChooseServices = ({navigation}) => {
             <View style={{marginVertical: '5%'}}>
               <MainButton
                 text={'Next'}
-                onPress={() => setOnBoardingDone(true)}
+                onPress={() => navigation.navigate('ProfileVerification')}
               />
             </View>
           }

@@ -1,5 +1,5 @@
 import {StyleSheet, Text, View, FlatList, Dimensions} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import colors from '../../globalStyles/colors';
 import HomeHeader from '../../components/header/homeHeader';
@@ -7,8 +7,59 @@ import InputFieldWithIcon from '../../components/inputfields/inputFieldWithIcon'
 import ServiceDetail from '../../components/cards/serviceDetail';
 import ServiceDetailHorizontal from '../../components/cards/serviceDetailHorizontal';
 import ProfileServiceCard2 from '../../components/cards/ProfileServiceCard2';
+import ServiceCard from '../../components/cards/serviceCard';
 
 const Home = ({navigation}) => {
+  const [services, setServices] = useState([
+    {
+      key: 1,
+      title: 'Cleaning',
+      icon: require('../../../assets/icons/Cleaning.png'),
+      isSelected: false,
+    },
+    {
+      key: 2,
+      title: 'Babysitting',
+      icon: require('../../../assets/icons/Babysitting.png'),
+      isSelected: false,
+    },
+    {
+      key: 3,
+      title: 'Errand',
+      icon: require('../../../assets/icons/Errand.png'),
+      isSelected: false,
+    },
+    {
+      key: 4,
+      title: 'Shopping',
+      icon: require('../../../assets/icons/Shopping.png'),
+      isSelected: false,
+    },
+    {
+      key: 5,
+      title: 'Nursing',
+      icon: require('../../../assets/icons/Nursing.png'),
+      isSelected: false,
+    },
+    {
+      key: 6,
+      title: 'Companionship',
+      icon: require('../../../assets/icons/Companionship.png'),
+      isSelected: false,
+    },
+    {
+      key: 7,
+      title: 'Nanny',
+      icon: require('../../../assets/icons/Nanny.png'),
+      isSelected: false,
+    },
+    {
+      key: 8,
+      title: 'Gardening',
+      icon: require('../../../assets/icons/Gardening.png'),
+      isSelected: false,
+    },
+  ]);
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -20,6 +71,7 @@ const Home = ({navigation}) => {
       {/* Search Bar */}
       <View style={{marginBottom: '5%'}}>
         <InputFieldWithIcon
+          ShowPassword={true}
           placeholder={'Search by name or location'}
           icon={require('../../../assets/icons/filter.png')}
           iconSize={18}
@@ -34,10 +86,28 @@ const Home = ({navigation}) => {
       <FlatList
         ListHeaderComponent={
           <View>
-            {/* Explore */}
-
+            {/* Popular Services */}
+            <Text style={styles.text}>Popular Services</Text>
+            <View style={{marginVertical: '2%', marginHorizontal: '2.5%'}}>
+              <FlatList
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                data={services}
+                keyExtractor={item => item.key}
+                renderItem={({item}) => (
+                  <ServiceCard
+                    title={item.title}
+                    icon={item.icon}
+                    isSelected={item.isSelected}
+                    // onPress={() => {
+                    //   handleSelection(item.key);
+                    // }}
+                  />
+                )}
+              />
+            </View>
+            {/* Available Subscriptions */}
             <Text style={styles.text}>Available Subscriptions</Text>
-
             <View
               style={{
                 width: '95%',
@@ -70,7 +140,7 @@ const Home = ({navigation}) => {
                 horizontal={true}
               />
             </View>
-            {/* Available Subscriptions */}
+            {/* Explore */}
             <View style={{marginBottom: '5%', marginTop: '2%'}}>
               <Text style={styles.text}>Explore</Text>
             </View>

@@ -8,7 +8,7 @@ const ServiceRequests = ({navigation}) => {
     <View style={styles.container}>
       {/* Header */}
       <WhiteHeader
-        text={'Service Requests'}
+        text={'Services Requests'}
         onPress={() => navigation.goBack()}
         // text2={'Add New'}
         // onPress2={() => navigation.navigate('AddServiceRequest')}

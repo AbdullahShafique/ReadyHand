@@ -5,9 +5,12 @@ import SmallButton from '../buttons/smallButton';
 const OfferBestServicesCard = ({onPress}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text1}>Offer Best Services</Text>
-      <Text style={styles.text2}>Lorem ipsum dor sit met ato</Text>
-      <View style={{alignSelf: 'flex-end'}}>
+      <View>
+        <Text style={styles.text1}>Offer Best Services</Text>
+        <Text style={styles.text2}>Lorem ipsum dor sit met ato</Text>
+      </View>
+
+      <View style={{alignSelf: 'flex-end', marginTop: '2%'}}>
         <SmallButton
           text={'Add a Service'}
           height={Dimensions.get('window').height / 17}
@@ -31,6 +34,7 @@ const styles = StyleSheet.create({
     borderRadius: 17,
     padding: '5%',
     marginBottom: '5%',
+    justifyContent: 'space-between',
   },
   text1: {
     fontFamily: 'OpenSans-Bold',

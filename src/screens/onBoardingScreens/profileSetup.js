@@ -55,7 +55,7 @@ const ProfileSetup = ({navigation}) => {
               language: '',
             }}
             onSubmit={values => {
-              navigation.navigate('ProfileVerification');
+              navigation.navigate('ChooseServices');
               console.log('values:', values);
             }}>
             {formikProps => (

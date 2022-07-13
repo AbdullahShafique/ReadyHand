@@ -6,13 +6,16 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import colors from '../../globalStyles/colors';
 import MainHeader from '../../components/header/mainHeader';
 import UploadButton from '../../components/buttons/uploadButton';
 import MainButton from '../../components/buttons/mainButton';
+import {AuthContext} from '../../Authentication/authProvider';
 
 const ProfileVerification = ({navigation}) => {
+  const {setOnBoardingDone} = useContext(AuthContext);
+
   return (
     <View style={styles.container}>
       {/*Header  */}
@@ -51,7 +54,7 @@ const ProfileVerification = ({navigation}) => {
         <View style={{marginVertical: '5%'}}>
           <MainButton
             text={'Submit Profile'}
-            onPress={() => navigation.navigate('ChooseServices')}
+            onPress={() => setOnBoardingDone(true)}
           />
         </View>
       </ScrollView>
